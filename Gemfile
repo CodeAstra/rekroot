@@ -46,7 +46,10 @@ group :development, :test do
 
   gem 'guard-annotate'
 
+
 end
 
 
 gem 'devise'
+
+gem 'annotate'
