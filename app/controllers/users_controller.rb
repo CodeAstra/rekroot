@@ -5,10 +5,8 @@ before_action :authenticate_user!
 
     if user_signed_in?
       render_dashboard
-      # render html: '<b>html goes here<b/>'.html_safe
     else 
       render 'home/index'
-      # render html: '<b>html goes here<b/>'.html_safe
     end 
   end
 
