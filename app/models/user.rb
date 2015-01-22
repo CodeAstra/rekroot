@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
     EMPLOYER  = 2
     APPLICANT = 3 
 
-    def self.all?
+    def self.all
       [ADMIN, EMPLOYER, APPLICANT]
     end
   end
