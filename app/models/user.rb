@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  validates :user_type, presence: true, 
+  validates :role, presence: true, 
             numericality: { only_integer: true }, inclusion: { in: Role.all}
 
   def admin?
