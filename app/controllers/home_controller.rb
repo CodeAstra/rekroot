@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
+ 
   def index
     if user_signed_in?
-      logged_in
+      render_dashboard
     else 
       render 'home/index'
     end 
@@ -10,14 +11,15 @@ class HomeController < ApplicationController
 
   private 
 
-    def logged_in 
+    def render_dashboard
       if current_user.admin? 
         render 'user/dashboard/admin'
       elsif current_user.employer?
         render 'user/dashboard/employer'
-      else
+      elsif current_user.applicant?
         render 'user/dashboard/applicant'
       end
+    end
         
 
           
