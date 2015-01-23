@@ -1,5 +1,11 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+
+  <!-- Changed the styling for the login button -->
+  
+  <div class="actions input-group sign_up_fields">    
+    <%= button_to "Log In", new_session_path(resource_name), class: "btn btn-primary", id: "sign_up_btn"  %>
+  </div>
+  
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
@@ -23,3 +29,4 @@
     <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
   <% end -%>
 <% end -%>
+
