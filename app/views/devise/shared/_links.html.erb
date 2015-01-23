@@ -1,7 +1,7 @@
 <%- if controller_name != 'sessions' %>
 
   <!-- Changed the styling for the login button -->
-  
+
   <div class="actions input-group sign_up_fields">    
     <%= button_to "Log In", new_session_path(resource_name), class: "btn btn-primary", id: "sign_up_btn"  %>
   </div>
@@ -9,6 +9,11 @@
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  
+  <div class="actions input-group sign_up_fields">    
+    <%= button_to "Sign Up", new_registration_path(resource_name), class: "btn btn-primary", id: "sign_up_btn"  %>
+  </div>
+
   <%= link_to "Sign up", new_registration_path(resource_name) %><br />
 <% end -%>
 
