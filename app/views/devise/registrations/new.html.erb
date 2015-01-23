@@ -22,11 +22,11 @@
   </div>
 
    <div class="field">
-    <%= f.radio_button :role, User::Role::Admin, :checked => true %> 
+    <%= f.radio_button :role, User::Role::ADMIN, :checked => true %> 
     <%= label :contactmethod_email, 'Admin' %>
-    <%= f.radio_button :role, User::Role::Employer %> 
+    <%= f.radio_button :role, User::Role::EMPLOYER %> 
     <%= label :contactmethod_email, 'Employer' %>
-    <%= f.radio_button :role, User::Role::Applicant %> 
+    <%= f.radio_button :role, User::Role::APPLICANT %> 
     <%= label :contactmethod_email, 'Applicant' %> 
   </div>
 
