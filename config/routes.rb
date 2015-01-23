@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root to: "users#index"
 
   authenticated :user do
-    root :to => 'users#index', :as => :authenticated_root
+    root :to => 'home#index', :as => :authenticated_root
   end
   
   # The priority is based upon order of creation: first created -> highest priority.
