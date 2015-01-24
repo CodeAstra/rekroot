@@ -65,3 +65,13 @@
   margin-left: 40px;
 }
 
+body.home-index {
+  .job-card{
+    height: 150px;
+    background-color: blue;
+    color: white;
+    glyphicon{
+      color: white;
+    }
+  }
+}
