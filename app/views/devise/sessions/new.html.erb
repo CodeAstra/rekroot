@@ -1,26 +1,43 @@
-<h2>Log in</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3" id = "logo_box">    
+          <i class="fa fa-skyatlas fa-4x" id ="logo_icon"></i>
+          <p id="name">REKROOT</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2" id = "main_caption"><p id="caption_text">All applicants<span id="red_marking">.</span> Ratings<span id="red_marking">.</span> Conversations<span id="red_marking">.</span> Stages<span id="red_marking">.</span> Teamwork<span id="red_marking">.</span> Wow<span id="red_marking"> !</span></p></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4" id ="sign_up_box">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            
+            <div class="field input-group sign_up_fields">       
+                <%= f.email_field :email, autofocus: true, class: "form-control input_box", placeholder: "Email Id"  %>
+            </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+            <div class="field input-group sign_up_fields">              
+                <%= f.password_field :password, autocomplete: "off", class: "form-control input_box", placeholder: "Password"  %>
+            </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+                      
+            <% if devise_mapping.rememberable? -%>
+              <div class="field input-group sign_up_fields">  
+                <div class="field" id="log_in_chkbox">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+              </div>
+            <% end -%> 
+                       
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+            <div class="actions input-group sign_up_fields">
+                <%= f.submit "Log In", class: "btn btn-primary", id: "sign_up_btn" %>
+            </div>   
+          <% end %>
+          <%= render "devise/shared/links" %>
+
+        </div>
+      </div>
     </div>
-  <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

@@ -53,3 +53,7 @@ end
 gem 'devise'
 
 gem 'annotate'
+
+gem 'bootstrap-sass'
+
+gem 'font-awesome-sass'
