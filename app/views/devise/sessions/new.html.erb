@@ -24,12 +24,16 @@
                 <%= f.password_field :password, autocomplete: "off", class: "form-control input_box", placeholder: "Password"  %>
             </div>
 
+                      
             <% if devise_mapping.rememberable? -%>
-              <div class="field">
-                <%= f.check_box :remember_me %>
-                <%= f.label :remember_me %>
+              <div class="field input-group sign_up_fields">  
+                <div class="field" id="log_in_chkbox">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
               </div>
-            <% end -%>            
+            <% end -%> 
+                       
 
             <div class="actions input-group sign_up_fields">
                 <%= f.submit "Log In", class: "btn btn-primary", id: "sign_up_btn" %>

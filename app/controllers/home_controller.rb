@@ -21,6 +21,7 @@ class HomeController < ApplicationController
       elsif current_user.applicant?
         render 'users/dashboard/applicant'
       end
+    
     end   
 
           
