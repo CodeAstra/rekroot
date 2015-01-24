@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  # get 'home/index'
+  get 'jobs/new'
+  post 'jobs/create'
 
   devise_for :users
 
