@@ -2,14 +2,14 @@
     <%- if controller_name != 'sessions' %>
       <!-- Changed the styling for the login button -->
       <div class="actions input-group sign_up_fields">    
-        <%= button_to "Log In", new_session_path(resource_name), class: "btn btn-primary", id: "sign_up_btn"  %>
+        <%= link_to "Click here to Log In", new_session_path(resource_name), id: "log_in_link" %>
       </div>  
     <% end -%>
 
     <%- if devise_mapping.registerable? && controller_name != 'registrations' %>  
     <!-- Changed the styling for the signup button -->
       <div class="actions input-group sign_up_fields">    
-        <%= button_to "Sign Up", new_registration_path(resource_name), class: "btn btn-danger", id: "sign_up_btn", method: :get  %>
+        <%= link_to "Click here to Sign Up", new_registration_path(resource_name), id: "log_in_link" %>
       </div>
     <% end -%>
 
