@@ -2,7 +2,7 @@
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
 
-          <%= form_for(:job, url: jobs_create_path ) do |f| %>
+          <%= form_for(:job, url: jobs_path ) do |f| %>
 
           <div class="field input-group">
             <%= f.text_field :title, autofocus: true, class: "form-control input_box", placeholder: "Title" %>

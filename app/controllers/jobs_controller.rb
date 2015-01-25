@@ -13,21 +13,29 @@ class JobsController < ApplicationController
 
 
   def apply
-    @job = Job.find(params[:id])
+    find_job
   end 
 
 
   def show 
-    @job = Job.find(params[:id])
+    find_job
   end 
 
   def index
   end
 
 
+ 
   private
 
   def job_params
     params.require(:job).permit(:title, :description)
   end
+
+   def find_job 
+    @job = Job.find(params[:id])
+  end
+
+
+
 end
