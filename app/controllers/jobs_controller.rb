@@ -22,7 +22,7 @@ class JobsController < ApplicationController
   end 
 
   def index
-    
+
   end
 
 
@@ -35,6 +35,13 @@ class JobsController < ApplicationController
 
    def fetch_job 
     @job = Job.find(params[:id])
+  end
+
+  class ProductsController
+    def action
+      @applicant = Applicant.save(params["applicant_id"])
+      redirect_to user_url(@user.id)
+    end
   end
 
 
