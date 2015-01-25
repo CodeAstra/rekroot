@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  
+  before_action :fetch_job, only: [:show, :apply]
 
   def new
   end
@@ -13,15 +13,16 @@ class JobsController < ApplicationController
 
 
   def apply
-    find_job
+    
   end 
 
 
   def show 
-    find_job
+    
   end 
 
   def index
+    
   end
 
 
@@ -32,7 +33,7 @@ class JobsController < ApplicationController
     params.require(:job).permit(:title, :description)
   end
 
-   def find_job 
+   def fetch_job 
     @job = Job.find(params[:id])
   end
 
