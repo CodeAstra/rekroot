@@ -8,7 +8,7 @@ class JobsController < ApplicationController
 
     @job=current_user.jobs.new(job_params)
     @job.save!
-    redirect_to job_show_path(@job.id)
+    redirect_to job_path(@job.id)
   end
 
 
