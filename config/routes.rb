@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get 'jobs/index'
   
 
+  get 'jobs/:id' => 'jobs#show', as: :job_show
+
+  get 'jobs/:id/apply' => 'jobs#apply', as: :job_apply
+
   devise_for :users
 
   # root  "home#index"
@@ -17,6 +21,9 @@ devise_scope :user do
     root :to =>  'devise/registrations#new', as: :unauthenticated_root
   end
 end
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
