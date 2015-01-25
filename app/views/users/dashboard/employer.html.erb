@@ -1,7 +1,9 @@
 <h1>Hello Employer</h1>
 
 <div class="job-card col-md-3">
-  <%= link_to('', jobs_new_path, :method => :get, class: "glyphicon glyphicon-plus") %>
+  <%= link_to jobs_new_path, :method => :get do %>
+  <span class="glyphicon glyphicon-plus">My span&nbsp;</span>
+  <% end %>
 </div>
 
 <li>

@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
+  has_many :jobs, foreign_key: "owner_id"
 
   module Role 
     ADMIN = 1 
