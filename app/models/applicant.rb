@@ -17,5 +17,5 @@
 class Applicant < ActiveRecord::Base
   belongs_to :job
   validates :job_id, presence: true
-  validates :email_id, presence: true, format: { with: /\A[^@]+@[^@]+\z/}
+  validates :email_id, presence: true, format: { with: Devise::email_regexp}
 end
