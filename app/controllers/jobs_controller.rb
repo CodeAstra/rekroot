@@ -3,10 +3,8 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job=Job.new(job_params)
+    @job=current_user.jobs.new(job_params)
     @job.save!
-
-
   end
 
   def index
