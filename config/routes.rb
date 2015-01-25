@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'jobs/new'
   post 'jobs/create'
+  get 'jobs/index'
+  
 
   get 'jobs/:id' => 'jobs#show', as: :job_show
 

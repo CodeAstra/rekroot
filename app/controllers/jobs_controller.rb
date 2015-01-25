@@ -2,14 +2,15 @@ class JobsController < ApplicationController
   
 
   def new
-    
   end
 
   def create
-    @job=Job.new(job_params)
+
+    @job=current_user.jobs.new(job_params)\
     @job.save!
     redirect_to job_show_path(@job.id)
   end
+
 
   def apply
     @job = Job.find(params[:id])
@@ -19,6 +20,9 @@ class JobsController < ApplicationController
   def show 
     @job = Job.find(params[:id])
   end 
+
+  def index
+  end
 
 
   private

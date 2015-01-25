@@ -25,7 +25,10 @@ ActiveRecord::Schema.define(version: 20150125064619) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "owner_id"
   end
+
+  add_index "jobs", ["owner_id"], name: "index_jobs_on_owner_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
