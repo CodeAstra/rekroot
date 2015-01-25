@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get 'jobs/new'
   post 'jobs/create'
 
-  get 'jobs/:id' => 'jobs#show', as: :purchase
+  get 'jobs/:id' => 'jobs#show', as: :job_show
+
+  get 'jobs/:id/apply' => 'jobs#apply', as: :job_apply
 
   devise_for :users
 
