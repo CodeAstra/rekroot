@@ -1,13 +1,9 @@
-
-
 <h1>Hello Employer</h1>
 
 <div class="job-card col-md-3">
-  <%= link_to jobs_new_path, :method => :get do %>
+  <%= link_to new_job_path, :method => :get do %>
   <span class="glyphicon glyphicon-plus">My span&nbsp;</span>
   <% end %>
 </div>
 
-<li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-</li>
+<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
