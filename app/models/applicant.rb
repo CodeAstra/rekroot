@@ -17,7 +17,7 @@
 class Applicant < ActiveRecord::Base
   belongs_to :job
   validates :job_id, presence: true
-  validates :email_id, presence: true, format: { with: Devise::email_regexp}
+  validates :email, presence: true, format: { with: Devise::email_regexp}
   module Gender
     MALE = 0
     FEMALE = 1

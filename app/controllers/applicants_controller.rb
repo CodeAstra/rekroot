@@ -6,8 +6,23 @@ class ApplicantsController < ApplicationController
     @applicant = @job.applicants.new
   end
 
+  def create 
+    @applicant = @job.applicants.new(applicant_params)
+    @applicant.save!
+    render 'applicants/partials/confirm_to_apply'
+  end 
+
+
+
+
+  
+
 
   private 
+
+    def applicant_params 
+      params.require(:applicant).permit(:name, :email)
+    end 
 
     def fetch_job
       @job = Job.find(params[:job_id])
