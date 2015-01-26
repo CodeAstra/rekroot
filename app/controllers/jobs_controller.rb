@@ -16,7 +16,6 @@ class JobsController < ApplicationController
   end
 
   def show 
-    
   end 
 
   def index

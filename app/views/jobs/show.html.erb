@@ -1,5 +1,6 @@
 <div> 
   <h2><%= @job.title %></h2>
   <h4><%= @job.description %></h4>
-  
+
+  <%= link_to "Apply", new_job_applicant_path(@job) %>
 </div>
