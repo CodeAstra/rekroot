@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   resources :jobs do 
-    resources :applicants
+    resources :applicants do
+      get 'apply'
+    end
   end 
 
 

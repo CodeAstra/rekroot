@@ -3,8 +3,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Hi <%= @user.name %></h1>
+    <h1>Hi <%= @applicant.name %></h1>
+    <h2>You applied for <%= @applicant.job.title %></h2>
     <p>Please click on Confirm to confirm your email id and apply for the job</p>
-    
+    <%= link_to "Confirm", job_applicant_apply_url(@applicant.job,@applicant) %>
   </body>
 </html>
