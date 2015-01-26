@@ -8,6 +8,21 @@
   <% end %>
 </div>
 
+<% @users.each do |c| %>
+
+  <div class="col-md-4 col-lg-2 col-sm-3 col-xs-2">
+    <!-- normal -->
+    <div class="ih-item square effect11 top_to_bottom" id="first"><%= link_to user_path(c) do %>
+     <div id="users_page_user_image" ><%= image_tag c.photo %></div>
+     <div id="user_details"><span class="card_text"><h4><%= c.name %></h4>Department: <%= c.department %>
+      <br> Year Of Joining: <%= c.yearofjoining %><br>Course: <%= c.course %><br>Hostel: <%= c.hostel %> <br> Owns   <%= c.books_count.to_i==0 ? ("0 books") : (c.books_count.to_i==1 ? ("1 book"):(c.books_count.to_s + " books")) %>   </span> </div>
+      <% end %>
+    </div>
+    <!-- end normal -->
+
+  </div>
+<% end %>
+
 <li>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
 </li>
