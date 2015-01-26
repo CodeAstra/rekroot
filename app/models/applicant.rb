@@ -36,6 +36,7 @@ class Applicant < ActiveRecord::Base
   end
 
   belongs_to :job
+  has_many :answers 
   validates :job_id, presence: true
   validates :email, presence: true, format: { with: Devise::email_regexp}
   
