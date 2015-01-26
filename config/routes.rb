@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
 
   resources :jobs do 
-    resources :applicants
+    resources :applicants do
+      get 'apply'
+      resources :answers do 
+      end 
+      
+    end
+
+    resources :questions do
+    end
+
   end 
 
 

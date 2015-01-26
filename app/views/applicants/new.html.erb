@@ -1,6 +1,13 @@
 <div> 
   <h2><%= @job.title %></h2>
   <h4><%= @job.description %></h4>
-  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" style="width:100px">
-  <button class="btn btn-primary">Apply to this job</button>
+  
+  <%= simple_form_for(@applicant, url: job_applicants_path) do |f| %>
+  <%= f.input :name, label: 'Your Name' %>
+  <%= f.input :email, label: 'Your Email Id'  %>  
+  <%= f.submit "Confirm Email" %>
+  <% end %>
+
+  
+
 </div>

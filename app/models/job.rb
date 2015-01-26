@@ -16,4 +16,5 @@ class Job < ActiveRecord::Base
   validates :title, presence: true, length: {maximum: 140}
 
   has_many :applicants
+  has_many :questions
 end
