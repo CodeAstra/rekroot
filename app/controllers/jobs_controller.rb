@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :fetch_job, only: [:show, :apply]
+  before_action :fetch_job, only: [:show]
 
   def new
      @job=current_user.jobs.new
@@ -14,12 +14,6 @@ class JobsController < ApplicationController
       render 'new'
     end
   end
-
-
-  def apply
-    
-  end 
-
 
   def show 
     
@@ -40,14 +34,4 @@ class JobsController < ApplicationController
    def fetch_job 
     @job = Job.find(params[:id])
   end
-
-  class ProductsController
-    def action
-      @applicant = Applicant.save(params["applicant_id"])
-      redirect_to user_url(@user.id)
-    end
-  end
-
-
-
 end

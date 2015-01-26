@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-
-  
-  get 'applicants/new'
-
   resources :jobs do 
     resources :applicants
   end 
