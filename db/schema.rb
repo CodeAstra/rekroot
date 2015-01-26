@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126120129) do
+ActiveRecord::Schema.define(version: 20150126133317) do
+
+  create_table "answers", force: :cascade do |t|
+    t.text     "answer"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "question_id"
+    t.integer  "applicant_id"
+  end
+
+  add_index "answers", ["applicant_id"], name: "index_answers_on_applicant_id"
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
 
   create_table "applicants", force: :cascade do |t|
     t.string   "name"
@@ -41,7 +52,12 @@ ActiveRecord::Schema.define(version: 20150126120129) do
     t.string   "question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "type"
+    t.text     "options"
+    t.integer  "job_id"
   end
+
+  add_index "questions", ["job_id"], name: "index_questions_on_job_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

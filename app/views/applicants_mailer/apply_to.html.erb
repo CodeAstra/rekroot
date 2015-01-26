@@ -6,6 +6,6 @@
     <h1>Hi <%= @applicant.name %></h1>
     <h2>You applied for <%= @applicant.job.title %></h2>
     <p>Please click on Confirm to confirm your email id and apply for the job</p>
-    <%= link_to "Confirm", job_applicant_apply_url(@applicant.job,@applicant) %>
+    <%= link_to "Confirm", job_applicant_apply_url(@applicant.job,@applicant), :target => '_blank' %>
   </body>
 </html>
