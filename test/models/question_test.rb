@@ -6,6 +6,9 @@
 #  question   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  type       :integer
+#  options    :text
+#  job_id     :integer
 #
 
 require 'test_helper'
