@@ -1,28 +1,29 @@
-
-
 <h1>Hello Employer</h1>
 
+<% @jobs.each do |c| %>
 <div class="job-card col-md-3">
-  <%= link_to jobs_new_path, :method => :get do %>
-  <span class="glyphicon glyphicon-plus">My span&nbsp;</span>
+  <%= link_to new_job_path, :method => :get do %>
+  <span class="glyphicon glyphicon-plus">My span</span>
   <% end %>
-</div>
 
-<% @users.each do |c| %>
-
-  <div class="col-md-4 col-lg-2 col-sm-3 col-xs-2">
-    <!-- normal -->
-    <div class="ih-item square effect11 top_to_bottom" id="first"><%= link_to user_path(c) do %>
-     <div id="users_page_user_image" ><%= image_tag c.photo %></div>
-     <div id="user_details"><span class="card_text"><h4><%= c.name %></h4>Department: <%= c.department %>
-      <br> Year Of Joining: <%= c.yearofjoining %><br>Course: <%= c.course %><br>Hostel: <%= c.hostel %> <br> Owns   <%= c.books_count.to_i==0 ? ("0 books") : (c.books_count.to_i==1 ? ("1 book"):(c.books_count.to_s + " books")) %>   </span> </div>
-      <% end %>
+  <%= link_to user_path(c) do %>
+  <div id="job_card">
+    <p class="job_title"><%= c.title %></p><br>
+    <div class="updates_section">
+      <i class="fa fa-whatsapp updates"></i>
+      <p class="updates"><%= c.books_count.to_i==0 ? ("0 messages") : (c.books_count.to_i==1 ? ("1 message"):(c.books_count.to_s + " messages")) %></p>
     </div>
-    <!-- end normal -->
-
+    <div class="updates_section">
+      <i class="fa fa-inbox updates"></i>
+      <p class="updates"><%= c.books_count.to_i==0 ? ("0 updates") : (c.books_count.to_i==1 ? ("1 update"):(c.books_count.to_s + " updates")) %></p>
+    </div>
   </div>
+  <% end %>
+
+</div>
 <% end %>
 
 <li>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
 </li>
+

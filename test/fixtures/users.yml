@@ -16,6 +16,7 @@
 #  confirmation_token     :string
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
+#  unconfirmed_email      :string
 #  created_at             :datetime
 #  updated_at             :datetime
 #  role                   :integer          default("2")
