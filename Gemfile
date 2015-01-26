@@ -46,6 +46,7 @@ group :development, :test do
 
   gem 'guard-annotate'
 
+  gem 'letter_opener'
 
 end
 
