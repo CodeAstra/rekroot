@@ -1,0 +1,5 @@
+<%= simple_form_for @job do |f| %>
+  <%= f.input :question, label: 'Question' %>
+  <%= f.input :accepts, as: :radio_buttons %>
+  <%= f.submit "Add Question" %>
+<% end %>

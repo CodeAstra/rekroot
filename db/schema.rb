@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126133317) do
+ActiveRecord::Schema.define(version: 20150127061623) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "answer"
@@ -49,12 +49,13 @@ ActiveRecord::Schema.define(version: 20150126133317) do
   add_index "jobs", ["owner_id"], name: "index_jobs_on_owner_id"
 
   create_table "questions", force: :cascade do |t|
-    t.string   "question"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "question"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "type"
     t.text     "options"
     t.integer  "job_id"
+    t.boolean  "mandatory",  default: false
   end
 
   add_index "questions", ["job_id"], name: "index_questions_on_job_id"

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  
+
   resources :jobs do 
     resources :applicants do
       get 'apply'
@@ -16,7 +18,7 @@ Rails.application.routes.draw do
 
   # get 'jobs/:id' => 'jobs#show', as: :job_show
 
-  # get 'jobs/:id/apply' => 'jobs#apply', as: :job_apply
+  
 
   devise_for :users
 

@@ -22,7 +22,6 @@ class JobsController < ApplicationController
 
   end
 
-
  
   private
 
