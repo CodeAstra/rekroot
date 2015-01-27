@@ -4,6 +4,9 @@
 
           <%= render partial: 'jobs/form' %>
 
+          <div id="questions">
+            <%= link_to "Add a question", new_job_question_path(@job), remote:true, class: "btn btn-primary", id: "add_question" %>
+          </div>
         </div>
       </div>
     </div>

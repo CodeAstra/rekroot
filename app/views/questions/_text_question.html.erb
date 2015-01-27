@@ -1,4 +1,4 @@
-<%= simple_form_for @question do |f| %>
+<%= simple_form_for [@job, @question] do |f| %>
   <%= f.input :question, label: 'Question' %>
   <%= f.submit "Add Question" %>
 <% end %>
