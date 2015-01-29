@@ -27,22 +27,23 @@ class Question < ActiveRecord::Base
   has_many :answers
 
 
-  validates :type, presence: true, 
+  validates :question_type, presence: true, 
             numericality: { only_integer: true }, inclusion: { in: Type.all}
+  validates :question, presence:true
 
   def text?
-    return type == Type::TEXT 
+    return question_type == Type::TEXT 
   end 
 
   def mcq_radio?
-    return type == Type::MCQ_RADIO
+    return question_type == Type::MCQ_RADIO
   end
 
   def mcq_chkbox?
-    return type == Type::MCQ_CHKBOX
+    return question_type == Type::MCQ_CHKBOX
   end
 
   def upload?
-    return type == Type::UPLOAD
+    return question_type == Type::UPLOAD
   end
 end

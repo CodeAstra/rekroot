@@ -50,12 +50,12 @@ ActiveRecord::Schema.define(version: 20150127061623) do
 
   create_table "questions", force: :cascade do |t|
     t.text     "question"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.integer  "type"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "question_type", default: 1
     t.text     "options"
     t.integer  "job_id"
-    t.boolean  "mandatory",  default: false
+    t.boolean  "mandatory",     default: false
   end
 
   add_index "questions", ["job_id"], name: "index_questions_on_job_id"

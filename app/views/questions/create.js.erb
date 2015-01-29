@@ -1,0 +1,8 @@
+<% if @save_success %>
+  $('#questions_list').append('<%= j render(@question) %>');
+  $('#question_<%= @question.id %>').effect("highlight", {}, 2000);
+  $('form#new_question')[0].reset();
+  $('.flash_messages').html('');
+<% else %>
+  $('.flash_messages').html('<%= j flash_tag("There was an error saving question", "alert") %>')
+<% end %>

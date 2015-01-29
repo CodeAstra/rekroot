@@ -6,7 +6,6 @@ class JobsController < ApplicationController
   end
 
   def create
-
     @job=current_user.jobs.new(job_params)
     if @job.save 
       redirect_to edit_job_path(@job.id)
