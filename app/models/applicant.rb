@@ -14,7 +14,11 @@
 #  confirm    :boolean          default("f")
 #
 
+
 class Applicant < ActiveRecord::Base
+
+  after_create :send_confirmation_mail
+
   module Gender
     MALE = 0
     FEMALE = 1
@@ -40,4 +44,9 @@ class Applicant < ActiveRecord::Base
   validates :job_id, presence: true
   validates :email, presence: true, format: { with: Devise::email_regexp}
   
+
+  def send_confirmation_mail 
+    ApplicantsMailer.apply_to(self).deliver
+  end 
+
 end
