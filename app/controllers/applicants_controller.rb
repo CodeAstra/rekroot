@@ -9,9 +9,7 @@ class ApplicantsController < ApplicationController
   def create 
     @applicant = @job.applicants.new(applicant_params)
     @applicant.save!
-    ApplicantsMailer.apply_to(@applicant).deliver
     render 'applicants/partials/confirm_to_apply'
-
   end 
 
   def apply 

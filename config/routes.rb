@@ -1,11 +1,9 @@
-Rails.application.routes.draw do
-
+Rails.application.routes.draw do 
   resources :jobs do 
     resources :applicants do
       get 'apply'
       resources :answers do 
-      end 
-      
+      end  
     end
 
     resources :questions do
@@ -13,23 +11,18 @@ Rails.application.routes.draw do
 
   end 
 
-
-  # get 'jobs/:id' => 'jobs#show', as: :job_show
-
-  # get 'jobs/:id/apply' => 'jobs#apply', as: :job_apply
-
   devise_for :users
 
   # root  "home#index"
-devise_scope :user do
-  authenticated :user do
-    root :to => 'home#index', :as => :authenticated_root
+  devise_scope :user do
+    authenticated :user do
+      root :to => 'home#index', :as => :authenticated_root
+    end
+    
+    unauthenticated :user do
+      root :to =>  'devise/registrations#new', as: :unauthenticated_root
+    end
   end
-  
-  unauthenticated :user do
-    root :to =>  'devise/registrations#new', as: :unauthenticated_root
-  end
-end
 
 
 

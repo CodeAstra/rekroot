@@ -1,0 +1,5 @@
+<%= simple_form_for [@job, @question], remote: true do |f| %>
+  <%= f.input :question, label: 'Question' %>
+  <%= f.submit "Save" %>
+  <%= f.submit "Remove" %>
+<% end %>

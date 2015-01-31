@@ -2,21 +2,7 @@
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
 
-          <%= simple_form_for(@job) do |f| %>
-
-          <div class="field input-group">
-            <%= f.input :title, autofocus: true, placeholder: "Title" %>
-          </div>
-
-          <div class="field input-group">
-            <%= f.input :description, placeholder: "Description", as: :text %>
-          </div>
-
-          <div class="actions input-group">
-            <%= f.button :submit, "Create Job", class: "btn btn-primary", id: "create_job_btn" %>
-          </div>
-
-          <% end %>
+          <%= render partial: 'jobs/form' %>
 
         </div>
       </div>
