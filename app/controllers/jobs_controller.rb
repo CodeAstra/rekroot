@@ -19,7 +19,7 @@ class JobsController < ApplicationController
   end 
 
   def index    
-    @jobs = current_user.company.job.all
+    @jobs = @company.jobs.all
   end
 
 
