@@ -12,7 +12,6 @@
 class Company < ActiveRecord::Base
  
   has_many :jobs
-  has_many :users 
-  
+  has_many :users   
   validates :name, presence: true 
 end

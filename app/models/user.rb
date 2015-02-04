@@ -30,7 +30,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
   
-
+  belongs_to :company
+  
   module Role 
     ADMIN = 1 
     EMPLOYER  = 2
