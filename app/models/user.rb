@@ -20,6 +20,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  role                   :integer          default("2")
+#  company_id             :integer
 #
 
 class User < ActiveRecord::Base
@@ -28,12 +29,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
-  has_many :jobs, foreign_key: "owner_id"
+  
 
   module Role 
     ADMIN = 1 
     EMPLOYER  = 2
-    APPLICANT = 3 
+    APPLICANT = 3
 
     def self.all
       [ADMIN, EMPLOYER, APPLICANT]
@@ -50,6 +51,7 @@ class User < ActiveRecord::Base
   def employer?
     return role == Role::EMPLOYER
   end
+
 
   def applicant?
     return role == Role::APPLICANT

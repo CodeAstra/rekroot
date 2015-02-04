@@ -1,13 +1,13 @@
 class JobsController < ApplicationController
   before_action :fetch_job, only: [:show]
+  before_action :fetch_company, only: [:index, :show]
 
   def new
-     @job=current_user.jobs.new
+     @job=current_user.company.jobs.new
   end
 
   def create
-
-    @job=current_user.jobs.new(job_params)
+    @job=current_user.company.jobs.new(job_params)
     if @job.save 
       redirect_to job_path(@job.id)
     else 
@@ -18,8 +18,8 @@ class JobsController < ApplicationController
   def show 
   end 
 
-  def index
-
+  def index    
+    @jobs = current_user.company.job.all
   end
 
 
@@ -30,7 +30,11 @@ class JobsController < ApplicationController
     params.require(:job).permit(:title, :description)
   end
 
-   def fetch_job 
+  def fetch_job 
     @job = Job.find(params[:id])
+  end
+
+  def fetch_company 
+    @company = Company.find(params[:company_id])
   end
 end

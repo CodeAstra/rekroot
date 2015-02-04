@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :jobs do 
-    resources :applicants
+  resources :companies do 
+    resources :users do 
+    end 
+
+    resources :jobs do 
+    end     
   end 
 
 
@@ -18,7 +22,7 @@ devise_scope :user do
   end
   
   unauthenticated :user do
-    root :to =>  'devise/registrations#new', as: :unauthenticated_root
+    root :to =>  'devise/sessions#new', as: :unauthenticated_root
   end
 end
 

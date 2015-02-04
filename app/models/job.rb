@@ -7,13 +7,11 @@
 #  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  owner_id    :integer
+#  company_id  :integer
 #
 
 class Job < ActiveRecord::Base
-  belongs_to :owner, class_name: User.name
-  validates :owner_id, presence: true
+  belongs_to :company
   validates :title, presence: true, length: {maximum: 140}
-
   has_many :applicants
 end

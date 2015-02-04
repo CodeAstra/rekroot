@@ -20,6 +20,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  role                   :integer          default("2")
+#  company_id             :integer
 #
 
 require 'test_helper'
