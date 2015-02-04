@@ -12,6 +12,7 @@
 #  phone      :string
 #  job_id     :integer
 #  confirm    :boolean          default("f")
+#  status     :integer          default("1")
 #
 
 require 'test_helper'

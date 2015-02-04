@@ -109,7 +109,8 @@ body.home-index {
             font-family: Lato;
             font-size: 1.3em;
             font-weight: bold;
-            border-bottom: 1px solid #B0A97B
+            border-bottom: 1px solid #B0A97B;
+            text-align: center;
           }
           
           .updates_section {
@@ -228,9 +229,7 @@ body.home-index {
           font-size: 1.1em;
         }
 
-        .dashboard_column_list {
-
-          .applicant_card {
+        .applicant_card {
             height: 60px;
             width: 100%;
             background-color: #F5F5F5;
@@ -242,13 +241,6 @@ body.home-index {
               text-decoration: none;
               color: #000;               
             }
-
-            .applicant_card_name {
-              .applicant_name {
-                font-family: Lato; 
-                font-weight: bold;            
-              }
-            }  
 
             .applicant_add {
 
@@ -262,7 +254,39 @@ body.home-index {
                   margin-right: 5px;
                 }
               }
-            }              
+            }
+
+        }
+
+        .dashboard_column_list {
+
+          ul {
+            padding: 0px;
+
+            li {
+            list-style: none;
+            }
+
+          }
+          
+          .applicant_card {
+            height: 60px;
+            width: 100%;
+            background-color: #F5F5F5;
+            box-shadow: 0px 0px 2px #121212;
+            margin-top: 10px;
+            padding: 5px;
+
+            
+
+            .applicant_card_name {
+              .applicant_name {
+                font-family: Lato; 
+                font-weight: bold;            
+              }
+            }  
+
+                          
           }
         }        
       }

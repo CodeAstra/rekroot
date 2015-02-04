@@ -7,7 +7,7 @@
       <div class="col-md-3 job_card_div">    
         <div class="job_card">
           <%= link_to new_company_job_path(@company), id: "add_job_link" do %>
-          <p id="add_job"><i class="fa fa-plus-square-o" id = "plus"></i>Add Job</p>
+          <p id="add_job" data-toggle="modal" data-target="#myModal" ><i class="fa fa-plus-square-o" id = "plus"></i>Add Job</p>
           <% end %>
         </div>        
       </div>
@@ -16,14 +16,14 @@
       <%= link_to company_job_path(@company, job), id: "job_card_clickable" do%>
         <div class="job_card">
           <p class="job_title"><%= job.title %></p>
-          <div class="updates_section">
+          <!-- <div class="updates_section">
             <i class="fa fa-whatsapp updates"></i>
             <p class="updates"></p>
           </div>
           <div class="updates_section">
             <i class="fa fa-inbox updates"></i>
             <p class="updates"></p>
-          </div>
+          </div> -->
         </div>
       <% end %>
       </div>

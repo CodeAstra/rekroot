@@ -1,3 +1,12 @@
+
+<script>
+  $(function() {
+      $( "#sortable" ).sortable();
+      $( "#sortable" ).disableSelection();
+    });
+</script>
+
+
 <div class="container-fluid" id ="job_dashboard_page">
   
   <div class="container-fluid">
@@ -8,25 +17,29 @@
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_1">
         <div class="job_dashboard_column">
           <h5> Applied </h5>
-          <div class="dashboard_column_list">
-            <div class="applicant_card">
-              <%= link_to new_company_job_applicant_path(@company, @job), id: "add_applicant_link" do %>
-                <div class="applicant_add">
-                  <p id="add_applicant"><i class="fa fa-plus-square-o" id = "plus"></i>Add Applicant</p>
-                </div>
-              <% end %>
-            </div>
-
-            <% @applicants.each do |applicant| %>
-            <div class="applicant_card">
-              <div class="applicant_card_name">
-                <p class="applicant_name"><%= applicant.name %></p>
+          <div class="applicant_card">
+            <%= link_to new_company_job_applicant_path(@company, @job), id: "add_applicant_link" do %>
+              <div class="applicant_add">
+                <p id="add_applicant"><i class="fa fa-plus-square-o" id = "plus"></i>Add Applicant</p>
               </div>
-            </div>
             <% end %>
           </div>
-
-        </div></div>
+          
+          <div class="dashboard_column_list">
+            <ul id="sortable">
+              <% @applicants.each do |applicant| %>
+              <li class="ui-state-default">
+                <div class="applicant_card">
+                  <div class="applicant_card_name">
+                    <p class="applicant_name"><%= applicant.name %></p>
+                  </div>
+                </div>
+              </li>
+              <% end %>
+            </ul>
+          </div>             
+        </div>
+      </div>
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_2"><div class="job_dashboard_column"><h5> Shortlisted </h5></div></div>
       <div class="col-md-4 job_dashboard_column_holder" id="job_dashboard_column_3"><div class="job_dashboard_column"><h5> Screening </h5></div></div>
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_4"><div class="job_dashboard_column"><h5> Pre-hire shortlist </h5></div></div>
