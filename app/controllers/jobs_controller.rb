@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_action :fetch_job, only: [:show]
   before_action :fetch_company, only: [:index, :show]
+  before_action :authenticate_user!
 
   def new
     @job=current_user.company.jobs.new
