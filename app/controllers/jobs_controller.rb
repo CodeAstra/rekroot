@@ -3,13 +3,13 @@ class JobsController < ApplicationController
   before_action :fetch_company, only: [:index, :show]
 
   def new
-     @job=current_user.company.jobs.new
+    @job=current_user.company.jobs.new
   end
 
   def create
     @job=current_user.company.jobs.new(job_params)
     if @job.save 
-      redirect_to job_path(@job.id)
+      redirect_to company_jobs_path
     else 
       render 'new'
     end
