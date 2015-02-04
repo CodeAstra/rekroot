@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     end 
 
     resources :jobs do 
+      resources :applicants do
+      end 
     end     
   end 
 

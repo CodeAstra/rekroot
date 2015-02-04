@@ -16,11 +16,12 @@ class JobsController < ApplicationController
     end
   end
 
-  def show 
-    
+  def show     
+    @applicants  = @job.applicants.all
   end 
 
-  def index    
+  def index 
+
     @jobs = @company.jobs.all
   end
 
