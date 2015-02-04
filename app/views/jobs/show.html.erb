@@ -1,6 +1,8 @@
-<div> 
-  <h2><%= @job.title %></h2>
-  <h4><%= @job.description %></h4>
-
-  <%= link_to "Apply", new_job_applicant_path(@job) %>
-</div>
+<div class="container-fluid" id ="all_jobs_page">
+  <div class="container" id="jobs_container">
+    <div class="row" id ="jobs_div">
+      
+      <h1><%= @job.title %></h1>      
+    </div>
+  </div>
+</div>  

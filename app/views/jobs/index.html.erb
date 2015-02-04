@@ -1,5 +1,33 @@
 
-<%= link_to "Add a Job", new_company_job_path(@company), class: "btn btn-primary"%>
-<% @jobs.each do |job| %>
-  <p><%= job.title %></p><br>
-<% end %>
+
+
+<div class="container-fluid" id ="all_jobs_page">
+  <div class="container" id="jobs_container">
+    <div class="row" id ="jobs_div">
+      <div class="col-md-3 job_card_div">    
+        <div class="job_card">
+          <%= link_to new_company_job_path(@company), id: "add_job_link" do %>
+          <p id="add_job"><i class="fa fa-plus-square-o" id = "plus"></i>Add Job</p>
+          <% end %>
+        </div>        
+      </div>
+      <% @jobs.each do |job| %>
+      <div class="col-md-3 job_card_div">
+      <%= link_to company_job_path(@company, job), id: "job_card_clickable" do%>
+        <div class="job_card">
+          <p class="job_title"><%= job.title %></p>
+          <div class="updates_section">
+            <i class="fa fa-whatsapp updates"></i>
+            <p class="updates"></p>
+          </div>
+          <div class="updates_section">
+            <i class="fa fa-inbox updates"></i>
+            <p class="updates"></p>
+          </div>
+        </div>
+      <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>  

@@ -76,3 +76,125 @@ body.home-index {
   }
 }
 
+// all jobs page - css
+
+#all_jobs_page {
+  /*margin-top: 50px;*/
+  min-height: 100vh;
+  height: 100%;
+  background-image: url('background2.png'); 
+
+  #jobs_container {
+    width: 80%;
+
+    #jobs_div {
+      margin-top: 80px;
+      height: 100%;
+      
+      .job_card_div {
+        padding: 10px;
+
+        .job_card {
+          height: 140px;
+          background-color: #ffffff;
+          padding: 10px;
+          max-width: 250px;
+          -webkit-box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
+          -moz-box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
+          box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
+          margin-left: auto;
+          margin-right: auto;
+          
+          .job_title {
+            font-family: Lato;
+            font-size: 1.3em;
+            font-weight: bold;
+            border-bottom: 1px solid #B0A97B
+          }
+          
+          .updates_section {
+            color: #B0A97B;
+            font-size: 0.95em;
+
+            .updates {
+              display: inline;
+            }
+          }
+
+          #add_job_link {
+            text-decoration: none;          
+
+            #add_job {
+              margin: auto;
+              font-family: Lato;
+              font-size: 1.6em;
+              color: #B0A97B;
+              text-align: center;
+              margin-top: 45px;
+            
+              &:hover {
+                color: #45422D;
+              }
+
+              #plus {
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+
+        #job_card_clickable {
+          text-decoration: none;
+          color: #000;
+
+          &:hover {
+            .job_card {
+              box-shadow: 0px 0px 3px #000;
+            }
+          }           
+        }
+      }
+    }
+
+  }
+
+}
+
+
+
+// navbar CSS
+
+#navbar {
+  margin-bottom: 0px;
+
+  #header_logo_icon {
+    font-size: 1.5em;
+    color: #ff0000;
+  }
+
+  #header_name {
+    display: inline;
+    font-size: 1.4em;
+    margin-left: 5px;
+    font-family: 'Poiret One';
+    font-weight: bold;
+  }
+
+  #header_sign_out {
+    font-size: 1.1em;
+    font-family: Lato;
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
