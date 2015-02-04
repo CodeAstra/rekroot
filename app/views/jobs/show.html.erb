@@ -1,8 +1,18 @@
-<div class="container-fluid" id ="all_jobs_page">
-  <div class="container" id="jobs_container">
-    <div class="row" id ="jobs_div">
-      
-      <h1><%= @job.title %></h1>      
+<div class="container-fluid" id ="job_dashboard_page">
+  
+  <div class="container-fluid">
+    <div class="row" id ="jobs_div">      
+      <h4 id="job_dashboard_title"><%= @job.title %></h1>      
     </div>
-  </div>
+    <div class="row" id="job_dashboard_column_container">      
+      <div class="col-md-2 job_dashboard_column_holder" id="job_dasboard_column_1"><div class="job_dasboard_column"></div></div>
+      <div class="col-md-2 job_dashboard_column_holder" id="job_dasboard_column_2"><div class="job_dasboard_column"></div></div>
+      <div class="col-md-4 job_dashboard_column_holder" id="job_dasboard_column_3"><div class="job_dasboard_column"></div></div>
+      <div class="col-md-2 job_dashboard_column_holder" id="job_dasboard_column_4"><div class="job_dasboard_column"></div></div>
+      <div class="col-md-2 job_dashboard_column_holder" id="job_dasboard_column_5"><div class="job_dasboard_column"></div></div>      
+    </div>  
+  </div>  
 </div>  
+
+
+

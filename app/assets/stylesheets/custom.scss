@@ -189,7 +189,40 @@ body.home-index {
 
 
 
+// Job Dashboard Page 
 
+#job_dashboard_page {
+  min-height: 100vh;
+  height: 100%;
+  background-image: url('background2.png'); 
+
+  #job_dashboard_title {
+    font-family: Lato;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+
+  #job_dashboard_column_container {
+    height: 800px;
+
+    .job_dashboard_column_holder {
+
+      padding-left: 5px;
+      padding-right: 5px;
+
+
+      .job_dasboard_column {
+        height: 800px;
+        background-color: #ffffff;              
+        -webkit-box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
+        -moz-box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
+        box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }    
+  }
+}
 
 
 
