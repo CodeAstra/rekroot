@@ -17,6 +17,9 @@ class ApplicantsController < ApplicationController
   end 
 
 
+  def show 
+  end
+
   private 
 
     def fetch_job

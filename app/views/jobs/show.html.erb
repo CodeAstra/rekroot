@@ -11,7 +11,8 @@
   
   <div class="container-fluid">
     <div class="row" id ="jobs_div">      
-      <h4 id="job_dashboard_title"><%= @job.title %></h1>      
+      <h4 id="job_dashboard_title"><%= @job.title %></h4>     
+      <%= link_to "Remove Job", company_job_path(@company, @job), method: :delete, class: "btn btn-danger pull-right" %>     
     </div>
     <div class="row" id="job_dashboard_column_container">      
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_1">
@@ -27,15 +28,7 @@
           
           <div class="dashboard_column_list">
             <ul id="sortable">
-              <% @applicants.each do |applicant| %>
-              <li class="ui-state-default">
-                <div class="applicant_card">
-                  <div class="applicant_card_name">
-                    <p class="applicant_name"><%= applicant.name %></p>
-                  </div>
-                </div>
-              </li>
-              <% end %>
+              <%= render @applicants %>
             </ul>
           </div>             
         </div>
@@ -47,6 +40,9 @@
     </div>  
   </div>  
 </div>  
+
+
+
 
 
 

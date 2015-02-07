@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
-  before_action :fetch_job, only: [:show]
-  before_action :fetch_company, only: [:index, :show]
+  before_action :fetch_job, only: [:show, :destroy]
+  before_action :fetch_company, only: [:index, :show, :destroy]
   before_action :authenticate_user!
 
   def new
@@ -21,9 +21,13 @@ class JobsController < ApplicationController
   end 
 
   def index 
-
     @jobs = @company.jobs.all
   end
+
+  def destroy     
+    @job.delete
+    redirect_to company_jobs_path
+  end 
 
 
  

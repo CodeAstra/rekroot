@@ -1,0 +1,20 @@
+<li class="ui-state-default" id="applicant_<%= applicant.id %>" data-toggle="modal" data-target="#applicant_details_<%= applicant.id %>" >
+  <div class="applicant_card">
+    <div class="applicant_card_name">
+      <p class="applicant_name"><%= applicant.name %></p>
+    </div>
+  </div>                
+</li>
+
+
+<div class="modal fade" id="applicant_details_<%= applicant.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= applicant.name %></h4>
+      </div>
+      
+    </div>
+  </div>
+</div>
