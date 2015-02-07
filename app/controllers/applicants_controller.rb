@@ -20,6 +20,13 @@ class ApplicantsController < ApplicationController
   def show 
   end
 
+  def destroy 
+    @applicant = @job.applicants.find(params[:id])
+    @applicant.delete
+    redirect_to company_job_path(@company, @job) 
+  end 
+
+
   private 
 
     def fetch_job
