@@ -294,8 +294,33 @@ body.home-index {
 }
 
 
+// Applicant Modal
+#applicant_modal {
+  min-height: 200px;
+  max-height: 800px;
 
 
+  h4 {
+    display: inline;
+    font-family: Lato;
+    font-size: 1.2em;
+  }
+
+  .close {
+    margin-top: 3px;
+  }
+
+  .delete_applicant {
+    display: inline;
+
+
+    #delete_applicant_button {
+      display: inline;
+      padding: 3px 8px;  
+      margin-right: 10px;
+    }
+  }
+}
 
 
 
