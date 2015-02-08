@@ -17,7 +17,9 @@ class JobsController < ApplicationController
   end
 
   def show     
-    @applicants  = @job.applicants.all
+    @applicants  = @job.applicants
+    @comments = Comment.reverse_chron.where(applicant_id: @applicants.pluck(:id)).group_by(&:applicant_id)
+    @new_comment = Comment.new
   end 
 
   def index 

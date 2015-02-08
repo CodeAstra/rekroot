@@ -14,8 +14,18 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel applicant_modal_name"><%= applicant.name %></h4>
         <div class="delete_applicant">
-        <%= link_to "Delete Applicant", company_job_applicant_path(@company, @job, applicant), method: :delete, class: "btn btn-danger pull-right", id: "delete_applicant_button" %>
+        <%= link_to "Delete", company_job_applicant_path(@company, @job, applicant), method: :delete, class: "btn btn-danger pull-right", id: "delete_applicant_button" %>
+        </div>
       </div>
+      <div class="modal-comment">
+
+        <%= render partial: "comments/new", locals: {job: @job, company: @company, applicant: applicant, comment: @new_comment} %>
+        
+        <div id="all_comments">
+          <%= render @comments[applicant.id] if @comments[applicant.id]%>
+        </div>
+
+        
       </div>      
     </div>
   </div>

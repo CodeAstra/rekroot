@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204183625) do
+ActiveRecord::Schema.define(version: 20150207163740) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "answer"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20150204183625) do
   end
 
   add_index "applicants", ["job_id"], name: "index_applicants_on_job_id"
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "comment"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.integer  "applicant_id"
+  end
+
+  add_index "comments", ["applicant_id"], name: "index_comments_on_applicant_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"

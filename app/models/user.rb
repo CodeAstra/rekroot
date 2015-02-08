@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
          :confirmable
   
   belongs_to :company
+  has_many :comments
   
   module Role 
     ADMIN = 1 
