@@ -61,6 +61,7 @@ class User < ActiveRecord::Base
   def accept_invitation
     super
     self.company = self.invited_by.company
+    
   end
 
 end

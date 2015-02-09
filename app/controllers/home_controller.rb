@@ -7,7 +7,7 @@ class HomeController < ApplicationController
     
       if current_user.company_id == nil
         redirect_to new_company_path
-      else 
+      else       
         @company_id = current_user.company_id
         redirect_to company_jobs_path(@company_id)
       end 
