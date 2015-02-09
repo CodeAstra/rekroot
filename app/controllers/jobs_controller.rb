@@ -1,7 +1,8 @@
 class JobsController < ApplicationController
-  before_action :fetch_job, only: [:show, :destroy]
-  before_action :fetch_company, only: [:index, :show, :destroy]
   before_action :authenticate_user!
+  before_action :fetch_company, only: [:index, :show, :destroy]
+  before_action :fetch_job, only: [:show, :destroy]
+  
 
   def new
     @job=current_user.company.jobs.new
@@ -47,4 +48,5 @@ class JobsController < ApplicationController
   def fetch_company 
     @company = Company.find(params[:company_id])
   end
+  
 end
