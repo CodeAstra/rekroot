@@ -295,31 +295,89 @@ body.home-index {
 
 
 // Applicant Modal
-#applicant_modal {
-  min-height: 200px;
-  max-height: 800px;
+
+#modal-dialog {
+
+  width: 700px; 
+
+  #applicant_modal {
+    min-height: 200px;
+    max-height: 800px;    
+
+    .modal-header {
+      h4 {
+        display: inline;
+        font-family: Lato;
+        font-size: 1.2em;
+      }
+
+      .close {
+        margin-top: 3px;
+      }
+
+      .delete_applicant {
+        display: inline;
 
 
-  h4 {
-    display: inline;
-    font-family: Lato;
-    font-size: 1.2em;
-  }
-
-  .close {
-    margin-top: 3px;
-  }
-
-  .delete_applicant {
-    display: inline;
-
-
-    #delete_applicant_button {
-      display: inline;
-      padding: 1px 4px;  
-      margin-right: 10px;
-      font-size: 0.9em;
+        #delete_applicant_button {
+          display: inline;
+          padding: 1px 4px;  
+          margin-right: 10px;
+          font-size: 0.9em;
+        }
+      }
     }
+
+    .modal-comment {
+      padding-left: 15px;
+      padding-right: 15px;
+
+      #comment_entry_div {
+        margin-top: 10px;
+      }
+
+      #all_comments {
+
+          height: 400px;
+          overflow: scroll;
+          
+        .comment_div {
+          padding-bottom: 5px;
+          border-bottom: 1px solid #c3c3c3;
+          margin-top: 10px;
+          p {
+            margin: 0px;
+          }
+
+          .comment_commenter {
+            margin-top: 5px;
+            font-size: 0.9em;
+            font-family: Lato;            
+            font-weight: bold;
+            display: inline;
+          }
+          .comment_text {
+            word-wrap: break-word;
+            font-size: 1em;
+            font-family: Lato;
+            background-color: #f1f1f1;
+            box-shadow: 0px 0px 2px #323232;
+            padding-left: 10px;
+            padding-right: 10px;
+            display: inline;
+            width: 90%;
+            float: right;
+
+          }
+          .comment_created_time {
+            margin-top: 5px;
+            font-size: 0.8em;
+            font-family: Lato;
+            color: grey;
+          }
+        }
+      }
+    }    
   }
 }
 

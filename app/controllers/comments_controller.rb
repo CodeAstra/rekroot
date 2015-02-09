@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :fetch_company, :fetch_job, :fetch_applicant
-  
+
 
   def new 
     @comment = @applicant.comments.new 
@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
   def create 
     @comment = @applicant.comments.new(comment_params)
     @comment_save = @comment.save    
+    @comment.update_attribute(:user_id, current_user.id)
     
   end
 
