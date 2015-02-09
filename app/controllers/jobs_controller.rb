@@ -29,8 +29,6 @@ class JobsController < ApplicationController
     redirect_to company_jobs_path
   end 
 
-
- 
   private
 
   def job_params

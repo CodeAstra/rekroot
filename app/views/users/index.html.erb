@@ -1,0 +1,20 @@
+<div class="container-fluid" id ="all_jobs_page">
+  <div class="container" id="jobs_container">
+    <div class="row" id ="jobs_div">
+      <div class="col-md-3 job_card_div">    
+        <div class="job_card">
+          <%= link_to new_user_invitation_path, id: "add_job_link" do %>
+          <p id="add_job" data-toggle="modal" data-target="#myModal" ><i class="fa fa-plus-square-o" id = "plus"></i>Invite colleagues</p>
+          <% end %>
+        </div>
+      </div>
+      <% @users.each do |user| %>
+        <div class="col-md-3 member_card">
+          <div class="member_card_name">
+            <p class="member_name"><%= user.name %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>  

@@ -54,6 +54,8 @@ end
 
 gem 'devise'
 
+gem 'devise_invitable'
+
 gem 'annotate'
 
 gem 'bootstrap-sass'
