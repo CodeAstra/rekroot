@@ -56,7 +56,6 @@ class Applicant < ActiveRecord::Base
     def self.all
       [APPLIED, SHORTLISTED, SCREENING, PRE_HIRE_SHORTLIST, OFFERED, ARCHIVED, REJECTED]
     end
-
   end
 
 

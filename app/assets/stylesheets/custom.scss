@@ -302,9 +302,15 @@ body.home-index {
 
   #applicant_modal {
     min-height: 200px;
-    max-height: 800px;    
+    max-height: 800px; 
+    padding-left: 15px;
+    padding-right: 15px;   
 
     .modal-header {
+
+      padding-left: 0px;
+      padding-right: 0px;
+
       h4 {
         display: inline;
         font-family: Lato;
@@ -323,17 +329,38 @@ body.home-index {
           display: inline;
           padding: 1px 4px;  
           margin-right: 10px;
-          font-size: 0.9em;
+          font-size: 1em;
         }
       }
     }
 
+    .status {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      .status_buttons {
+        padding: 1px 5px;
+        font-size: 0.8em;
+
+      }
+
+      .current_status {
+        font-size: 1em;
+        background-color: orange; 
+        font-weight: bold;
+      }
+    }
     .modal-comment {
-      padding-left: 15px;
-      padding-right: 15px;
+
+      border-top: 1px solid #d2d2d2;
 
       #comment_entry_div {
         margin-top: 10px;
+        margin-bottom: 10px;
+
+        #submit_comment {
+          padding: 1px 4px;  
+          font-size: 1em; 
+        }
       }
 
       #all_comments {
@@ -341,6 +368,7 @@ body.home-index {
           height: 400px;
           overflow: scroll;
           padding-right: 10px;
+          border-top: 1px solid #d2d2d2;
           
         .comment_div {
           padding-bottom: 5px;
@@ -349,6 +377,8 @@ body.home-index {
           p {
             margin: 0px;
           }
+
+          
 
           .comment_commenter {
             margin-top: 5px;

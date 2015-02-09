@@ -19,6 +19,11 @@ class JobsController < ApplicationController
 
   def show     
     @applicants  = @job.applicants
+    @applicants_applied  = @job.applicants.where(status: 1)
+    @applicants_shortlisted  = @job.applicants.where(status: 2)
+    @applicants_screening  = @job.applicants.where(status: 3)
+    @applicants_prehire  = @job.applicants.where(status: 4)
+    @applicants_offered  = @job.applicants.where(status: 5)
     @comments = Comment.reverse_chron.where(applicant_id: @applicants.pluck(:id)).group_by(&:applicant_id)
     @new_comment = Comment.new
     @new_applicant = Applicant.new

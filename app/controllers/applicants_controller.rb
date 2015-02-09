@@ -10,6 +10,7 @@ class ApplicantsController < ApplicationController
   def create 
     @applicant=@job.applicants.new(applicant_params)     
     @applicant = @applicant.save     
+    redirect_to  company_job_path(@company, @job)
   end 
 
   def index 
@@ -20,6 +21,15 @@ class ApplicantsController < ApplicationController
     @applicant = Applicant.find(params[:id])
   end
 
+  def edit 
+  end
+
+  def update 
+    @applicant = Applicant.find(params[:id])
+    @applicant.update_attributes(status_params)    
+  end 
+
+
   def destroy 
     @applicant = @job.applicants.find(params[:id])
     @applicant.delete
@@ -28,7 +38,6 @@ class ApplicantsController < ApplicationController
 
 
   private 
-
     def fetch_job
       @job = @company.jobs.find(params[:job_id])
     end 
@@ -40,4 +49,8 @@ class ApplicantsController < ApplicationController
     def applicant_params
       params.require(:applicant).permit(:name, :email)
     end
+
+    def status_params 
+      params.require(:applicant).permit(:status)
+    end 
 end
