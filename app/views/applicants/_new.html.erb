@@ -1,0 +1,44 @@
+<div class="applicant_add" data-toggle="modal" data-target="#new_applicant_myModal">
+  <p id="add_applicant"><i class="fa fa-plus-square-o" id = "plus"></i>Add Applicant</p>
+</div>
+
+
+
+
+<div class="modal fade" id="new_applicant_myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Applicant</h4>
+      </div>
+      <div class="modal-body">
+        <div> 
+          <h2><%= @job.title %></h2>
+          <h4><%= @job.description %></h4>
+
+          <%= simple_form_for [company, job, applicant], id: "applicant_form", remote: true do |f|%>
+            <!-- <div class="field input-group"> -->
+              <%= f.input :name, autofocus: true, placeholder: "Applicant's Name" %>
+            <!-- </div> -->
+            <%= f.input :job_id, as: :hidden %>
+
+            <!-- <div class="field input-group"> -->
+              <%= f.input :email, placeholder: "Applicant's Email Id" %>
+            <!-- </div> -->
+
+            <!-- <div class="actions input-group"> -->
+              <%= f.button :submit, "Create Applicant", class: "btn btn-primary", id: "create_job_btn" %>
+            <!-- </div> -->
+
+          <% end %>
+
+        </div>
+      </div>
+     <!--  <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
