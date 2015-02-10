@@ -18,12 +18,13 @@ class JobsController < ApplicationController
   end
 
   def show     
-    @applicants  = @job.applicants
-    @applicants_applied  = @job.applicants.where(status: 1)
-    @applicants_shortlisted  = @job.applicants.where(status: 2)
-    @applicants_screening  = @job.applicants.where(status: 3)
-    @applicants_prehire  = @job.applicants.where(status: 4)
-    @applicants_offered  = @job.applicants.where(status: 5)
+    @all_applicants  = @job.applicants
+
+    @applicants_applied  = @all_applicants.select{|app| app.status == 1}
+    @applicants_shortlisted  = @all_applicants.select{|app| app.status == 2}
+    @applicants_screening  = @all_applicants.select{|app| app.status == 3}
+    @applicants_prehire  = @all_applicants.select{|app| app.status == 4}
+    @applicants_offered  = @all_applicants.select{|app| app.status == 5}
 
     @applicants_applied_count = @applicants_applied.count
     @applicants_shortlisted_count = @applicants_shortlisted.count
@@ -31,8 +32,6 @@ class JobsController < ApplicationController
     @applicants_prehire_count = @applicants_prehire.count
     @applicants_offered_count = @applicants_offered.count
 
-    @comments = Comment.reverse_chron.where(applicant_id: @applicants.pluck(:id)).group_by(&:applicant_id)
-    @new_comment = Comment.new
     @new_applicant = Applicant.new
   end 
 

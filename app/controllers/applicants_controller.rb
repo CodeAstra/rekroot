@@ -17,7 +17,9 @@ class ApplicantsController < ApplicationController
 
 
   def show 
-    @applicant = Applicant.find(params[:id])
+    @applicant = @job.applicants.find(params[:id])
+    @comments = @applicant.comments.reverse_chron.all
+    @new_comment = @applicant.comments.new
   end
 
   def edit 

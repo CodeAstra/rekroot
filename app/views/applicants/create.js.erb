@@ -1,10 +1,5 @@
-// $('#applicant_form').on('submit', function() {
-//   $('new_applicant_myModal').modal('hide');
-// });
-
-
-
 <% if @save_success %>
   $('#new_applicant_myModal').modal('hide');
   $('#applied_applicants').prepend('<%= j render(@applicant) %>');
+  bindCardsToDetails();
 <% end %>
