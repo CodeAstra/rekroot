@@ -4,8 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  helper_method :current_company
 
   protected 
+
+  def current_company
+    return unless user_signed_in?
+    current_user.company
+  end
 
   def configure_permitted_parameters 
     devise_parameter_sanitizer.for(:sign_up) << :name

@@ -12,14 +12,14 @@
   <div class="container-fluid">
     <div class="row" id ="jobs_div">      
       <h4 id="job_dashboard_title"><%= @job.title %></h4>     
-      <%= link_to "Remove Job", company_job_path(@company, @job), method: :delete, class: "btn btn-danger pull-right" %>     
+      <%= link_to "Remove Job", company_job_path(current_company, @job), method: :delete, class: "btn btn-danger pull-right" %>     
     </div>
     <div class="row" id="job_dashboard_column_container">      
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_1">
         <div class="job_dashboard_column">
           <h5> Applied </h5>
           <div class="applicant_card">
-            <%= link_to new_company_job_applicant_path(@company, @job), id: "add_applicant_link" do %>
+            <%= link_to new_company_job_applicant_path(current_company, @job), id: "add_applicant_link" do %>
               <div class="applicant_add">
                 <p id="add_applicant"><i class="fa fa-plus-square-o" id = "plus"></i>Add Applicant</p>
               </div>

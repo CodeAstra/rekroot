@@ -11,7 +11,13 @@
       <% @users.each do |user| %>
         <div class="col-md-3 member_card">
           <div class="member_card_name">
+          <% if user.invited_by_id != nil %>
+          <%= link_to company_user_path(current_company ,user), method: :delete do %>
+          <p id="remove_user" data-toggle="modal" data-target="#myModal" ><i class="fa fa-times-circle-o"></i>Remove</p>
+          <% end %>
+          <% end %>
             <p class="member_name"><%= user.name %></p>
+            <p> email: <%= user.email %></p>
           </div>
         </div>
       <% end %>

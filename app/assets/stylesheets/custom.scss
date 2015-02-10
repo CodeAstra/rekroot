@@ -304,7 +304,11 @@ body.home-index {
             .member_card_name {
               .member_name {
                 font-family: Lato; 
-                font-weight: bold;            
+                font-weight: bold;
+                font-size: 17px;            
+              }
+              #remove_user {
+                  float: right;
               }
             } 
           }

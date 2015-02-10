@@ -1,7 +1,6 @@
 class ApplicantsController < ApplicationController
+
   before_action :fetch_company, :fetch_job
-
-
 
   def new
     @applicant = @job.applicants.new
