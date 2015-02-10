@@ -16,22 +16,10 @@ class InvitationsController < Devise::InvitationsController
     end
   end
 
-  def create
-    self.resource = invite_resource
-    resource_invited = resource.errors.empty?
-
-    yield resource if block_given?
-
-    if resource_invited
-      if is_flashing_format? && self.resource.invitation_sent_at
-        set_flash_message :notice, :send_instructions, :email => self.resource.email
-      end
-      redirect_to company_users_path(current_user.company)
-    else
-      respond_with_navigational(resource) { render :new }
-    end
+  def after_invite_path_for(resource)
+    company_users_path(current_user.company)  
   end
-
+  
   def update_sanitized_params
     devise_parameter_sanitizer.for(:accept_invitation) do |u|
       u.permit(:name, :password, :password_confirmation, :invitation_token, :company_id )
