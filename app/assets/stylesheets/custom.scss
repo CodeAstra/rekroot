@@ -332,6 +332,12 @@ body.home-index {
         font-size: 1.2em;
       }
 
+      h6{
+        display: inline-block;
+        font-family: Lato;
+        font-size: 0.8em;
+      }
+
       .close {
         margin-top: 3px;
       }
@@ -344,7 +350,10 @@ body.home-index {
           display: inline;
           padding: 1px 4px;  
           margin-right: 10px;
-          font-size: 1em;
+          font-size: 0.95em;
+          position: relative;
+          top: -20px;
+          right: 10px;
         }
       }
     }
