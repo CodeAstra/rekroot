@@ -31,9 +31,6 @@
         <%= link_to "Pre-hire Shotlist", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => 4), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_prehire"  %>
         <%= link_to "Offered", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => 5), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_offered"  %>
 
-
-
-
       </div>
 
       <div class="modal-comment">

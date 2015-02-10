@@ -12,12 +12,12 @@
   <div class="container-fluid">
     <div class="row" id ="jobs_div">      
       <h4 id="job_dashboard_title"><%= @job.title %></h4>     
-      <%= link_to "Remove Job", company_job_path(@company, @job), method: :delete, class: "btn btn-danger pull-right" %>     
+      <%= link_to "Remove Job", company_job_path(@company, @job), method: :delete, class: "btn btn-danger pull-right", id: "job_delete_btn", data: {confirm: "Are you sure?"} %>     
     </div>
     <div class="row" id="job_dashboard_column_container">      
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_1">
         <div class="job_dashboard_column">
-          <h5> Applied </h5>
+          <h5> Applied : <%= @applicants_applied_count %></h5>
           <div class="applicant_card">
             <%= link_to new_company_job_applicant_path(@company, @job), id: "add_applicant_link", remote: true do %>
               <%= render partial: 'applicants/new', locals: {job: @job, company: @company, applicant: @new_applicant} %>
@@ -35,7 +35,7 @@
       </div>
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_2">
         <div class="job_dashboard_column">
-          <h5> Shortlisted </h5>
+          <h5> Shortlisted : <%= @applicants_shortlisted_count %></h5>
           <div class="dashboard_column_list">
             <ul id="sortable">
               <% @applicants_shortlisted.each do |applicant| %>
@@ -47,7 +47,7 @@
       </div>
       <div class="col-md-4 job_dashboard_column_holder" id="job_dashboard_column_3">
         <div class="job_dashboard_column">
-          <h5> Screening </h5>
+          <h5> Screening : <%= @applicants_screening_count %></h5>
           <div class="dashboard_column_list">
             <ul id="sortable">
               <% @applicants_screening.each do |applicant| %>
@@ -59,7 +59,7 @@
       </div>
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_4">
         <div class="job_dashboard_column">
-          <h5> Pre-hire shortlist </h5>
+          <h5> Pre-hire shortlist : <%= @applicants_prehire_count %></h5>
           <div class="dashboard_column_list">
             <ul id="sortable">
               <% @applicants_prehire.each do |applicant| %>
@@ -71,7 +71,7 @@
       </div>
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_5">
         <div class="job_dashboard_column">
-          <h5> Offered</h5>
+          <h5> Offered : <%= @applicants_offered_count %></h5>
           <div class="dashboard_column_list">
             <ul id="sortable">
               <% @applicants_offered.each do |applicant| %>

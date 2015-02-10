@@ -184,6 +184,8 @@ body.home-index {
   #header_sign_out {
     font-size: 1.1em;
     font-family: Lato;
+    padding-right: 0px;
+    margin-right: 5px;
 
   }
 }
@@ -197,15 +199,28 @@ body.home-index {
   height: 100%;
   background-image: url('background2.png'); 
 
-  #job_dashboard_title {
-    font-family: Lato;
-    font-weight: bold;
-    margin-left: 5px;
-    text-align: center;
+  #jobs_div {
+    margin-top: 10px;
+
+    #job_dashboard_title {
+      font-family: Lato;
+      font-weight: bold;
+      margin-left: 5px;
+      text-align: left;
+      display: inline;
+    }
+    #job_delete_btn {
+      padding: 1px 6px;
+      font-size: 0.95em;   
+      margin-right: 5px;   
+    }
   }
+  
 
   #job_dashboard_column_container {
     height: 800px;
+    margin-top: 10px;
+    
 
     .job_dashboard_column_holder {
 
