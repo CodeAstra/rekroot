@@ -1,5 +1,6 @@
 class ApplicantsController < ApplicationController
   before_action :fetch_company, :fetch_job
+  before_action :fetch_last_positon, only: [:create]
 
 
 
@@ -9,7 +10,8 @@ class ApplicantsController < ApplicationController
 
   def create 
     @applicant=@job.applicants.new(applicant_params)     
-    @save_success = @applicant.save     
+    @save_success = @applicant.save    
+    @applicant.update_attributes(position: @last_position+1)
   end 
 
   def index 
@@ -47,6 +49,14 @@ class ApplicantsController < ApplicationController
     def fetch_company 
       @company = Company.find(params[:company_id])
     end
+
+    def fetch_last_positon        
+      if Applicant.select{|app| app.status == 1}.last == nil
+        @last_position = 0
+      else 
+        @last_position = Applicant.select{|app| app.status == 1}.last.position
+      end
+    end 
 
     def applicant_params
       params.require(:applicant).permit(:name, :email)

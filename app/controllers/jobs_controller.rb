@@ -18,7 +18,7 @@ class JobsController < ApplicationController
   end
 
   def show     
-    @all_applicants  = @job.applicants
+    @all_applicants  = @job.applicants.sort_by(&:position)
 
     @applicants_applied  = @all_applicants.select{|app| app.status == 1}
     @applicants_shortlisted  = @all_applicants.select{|app| app.status == 2}
@@ -42,7 +42,17 @@ class JobsController < ApplicationController
   def destroy     
     @job.delete
     redirect_to company_jobs_path
-  end 
+  end
+
+  def sort_applicants
+    sorted_ids = params[:applicant_ids].collect(&:to_i)
+    applicants = Applicant.where(id: sorted_ids).group_by(&:id)
+    (0...sorted_ids.length).each do |i|
+      applicants[sorted_ids[i]][0].update_attribute(:position, i+1)
+    end
+
+    render nothing: true
+  end
 
 
  

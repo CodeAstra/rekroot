@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150207163740) do
+ActiveRecord::Schema.define(version: 20150210124202) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "answer"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150207163740) do
     t.integer  "job_id"
     t.boolean  "confirm",    default: false
     t.integer  "status",     default: 1
+    t.integer  "position",   default: 1
   end
 
   add_index "applicants", ["job_id"], name: "index_applicants_on_job_id"

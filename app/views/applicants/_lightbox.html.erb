@@ -11,12 +11,7 @@
         </div>
 
         <div class="status">        
-          <!-- <button class="btn btn-default status_buttons current_status" id="status_applied">Applied</button>
-          <button class="btn btn-default status_buttons" id="status_shortlisted">Shortlisted</button>
-          <button class="btn btn-default status_buttons" id="status_screening">Screening</button>
-          <button class="btn btn-default status_buttons" id="status_prehire">Pre-hire shortlist</button>
-          <button class="btn btn-default status_buttons" id="status_offered">Offered</button> -->
-
+          
           <%= link_to "Applied", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => 1), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_applied"  %>
           <%= link_to "Shortlisted", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => 2), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_shortlisted"  %>
           <%= link_to "Screening", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => 3), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_screening"  %>
