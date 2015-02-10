@@ -9,8 +9,7 @@ class ApplicantsController < ApplicationController
 
   def create 
     @applicant=@job.applicants.new(applicant_params)     
-    @applicant = @applicant.save     
-    redirect_to  company_job_path(@company, @job)
+    @save_success = @applicant.save     
   end 
 
   def index 
