@@ -50,12 +50,8 @@ class ApplicantsController < ApplicationController
       @company = Company.find(params[:company_id])
     end
 
-    def fetch_last_positon        
-      if Applicant.select{|app| app.status == 1}.last == nil
-        @last_position = 0
-      else 
-        @last_position = Applicant.select{|app| app.status == 1}.last.position
-      end
+    def fetch_last_positon
+      @last_position = @job.applicants.where(status: 1).count + 1
     end 
 
     def applicant_params

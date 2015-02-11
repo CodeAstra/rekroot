@@ -45,10 +45,13 @@ class JobsController < ApplicationController
   end
 
   def sort_applicants
-    sorted_ids = params[:applicant_ids].collect(&:to_i)
-    applicants = Applicant.where(id: sorted_ids).group_by(&:id)
-    (0...sorted_ids.length).each do |i|
-      applicants[sorted_ids[i]][0].update_attribute(:position, i+1)
+    applicant_params = params[:applicant_ids]
+    applicants = Applicant.where(id: applicant_params.values.flatten.collect(&:to_i)).group_by(&:id)
+    applicant_params.each do |column_type, applicant_ids|
+      column_type = column_type.to_i
+      (0...applicant_ids.length).each do |i|
+        applicants[applicant_ids[i].to_i][0].update_attributes(position: i+1, status: column_type)
+      end
     end
 
     render nothing: true

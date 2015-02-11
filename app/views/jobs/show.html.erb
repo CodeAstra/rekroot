@@ -32,7 +32,7 @@
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_2">
         <div class="job_dashboard_column">
           <h5> Shortlisted : <%= @applicants_shortlisted_count %></h5>
-          <div class="dashboard_column_list">            
+          <div id="shortlisted_applicants" class="dashboard_column_list">            
               <% @applicants_shortlisted.each do |applicant| %>
                 <%= render partial: 'applicants/applicant', locals: {applicant: applicant} %>
               <% end %>            
@@ -46,7 +46,7 @@
       <div class="col-md-4 job_dashboard_column_holder" id="job_dashboard_column_3">
         <div class="job_dashboard_column">
           <h5> Screening : <%= @applicants_screening_count %></h5>
-          <div class="dashboard_column_list">            
+          <div id="screening_applicants" class="dashboard_column_list">            
               <% @applicants_screening.each do |applicant| %>
                 <%= render partial: 'applicants/applicant', locals: {applicant: applicant} %>
               <% end %>            
@@ -60,7 +60,7 @@
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_4">
         <div class="job_dashboard_column">
           <h5> Pre-hire shortlist : <%= @applicants_prehire_count %></h5>
-          <div class="dashboard_column_list">            
+          <div id="prehire_applicants" class="dashboard_column_list">            
               <% @applicants_prehire.each do |applicant| %>
                 <%= render partial: 'applicants/applicant', locals: {applicant: applicant} %>
               <% end %>            
@@ -73,7 +73,7 @@
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_5">
         <div class="job_dashboard_column">
           <h5> Offered : <%= @applicants_offered_count %></h5>
-          <div class="dashboard_column_list">            
+          <div id="offered_applicants" class="dashboard_column_list">            
               <% @applicants_offered.each do |applicant| %>
                 <%= render partial: 'applicants/applicant', locals: {applicant: applicant} %>
               <% end %>            
