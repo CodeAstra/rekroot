@@ -19,10 +19,13 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">     
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? && current_company && params[:controller] != "invitations" %>
-          <li> <%= link_to "Team members", company_users_path(current_company), id: "header_sign_out" %></li>
-          <li><%= link_to "View jobs", company_jobs_path(current_company), id: "header_sign_out" %></li>
-        <% end %>
-        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, id: "header_sign_out" %></li>        
+          <li> <%= link_to company_user_path(current_company,current_user),class: "form-control input_box",         id:"header_links" do %><%= current_user.name.capitalize %>
+            <% end %>
+          </li>
+          <li><%= link_to "Team members", company_users_path(current_company), id: "header_links" %></li>
+          <li><%= link_to "View jobs", company_jobs_path(current_company), id: "header_links" %></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, id: "header_links" %></li>
+        <% end %>        
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

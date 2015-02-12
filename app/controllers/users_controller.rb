@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   def index
     @users = @company.users.all
   end
+  
+  def edit
+  end
 
   def destroy     
     @user.delete
