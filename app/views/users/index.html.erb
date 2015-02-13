@@ -1,26 +1,46 @@
-<div class="container-fluid" id ="all_jobs_page">
-  <div class="container" id="jobs_container">
-    <div class="row" id ="jobs_div">
-      <div class="col-md-3 job_card_div">    
-        <div class="job_card">
-          <%= link_to new_user_invitation_path, id: "add_job_link" do %>
-          <p id="add_job" data-toggle="modal" data-target="#myModal" ><i class="fa fa-plus-square-o" id = "plus"></i>Invite colleagues</p>
-          <% end %>
+<div class="container-fluid" id ="all_users_page">
+  <div class="container" id="users_container">
+    <div class="row" id ="users_div">
+      <div class="col-md-3 user_card_div">    
+        <div class="user_invite_card">
+          <div id="invite_user_link">
+          <p id="invite_user" data-toggle="modal" data-target="#invite_colleague_myModal" ><i class="fa fa-plus-square-o" id = "plus"></i>Invite colleagues</p>
+          </div>
         </div>
       </div>
       <% @users.each do |user| %>
-        <div class="col-md-3 member_card">
-          <div class="member_card_name">
-          <% if user.invited_by_id != nil %>
-          <%= link_to company_user_path(current_company ,user), method: :delete do %>
-          <p id="remove_user" data-toggle="modal" data-target="#myModal" ><i class="fa fa-times-circle-o"></i>Remove</p>
-          <% end %>
-          <% end %>
-            <p class="member_name"><%= user.name %></p>
-            <p> email: <%= user.email %></p>
+        <div class="col-md-3 user_card_div">
+          <div class="user_card">
+            <% if user.invited_by_id != nil %>
+            <%= link_to company_user_path(current_company ,user), method: :delete do %>
+            <p id="remove_user"><i class="fa fa-times-circle-o"></i></p>
+            <% end %>
+            <% end %>
+            <div class="user_card_details">
+              <p class="user_card_name"><%= user.name.capitalize %></p>
+              <p class="user_card_email"><%= user.email %></p>
+            </div>
           </div>
         </div>
       <% end %>
     </div>
   </div>
-</div>  
+</div>
+
+
+
+<div class="modal fade" id="invite_colleague_myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Invite colleagues</h4>
+      </div>
+      <div class="modal-body">
+        <div>
+        <%= render "devise/invitations/new" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

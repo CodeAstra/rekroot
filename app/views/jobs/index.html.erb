@@ -9,21 +9,13 @@
         </div>        
       </div>
       <% @jobs.each do |job| %>
-      <div class="col-md-3 job_card_div">
-      <%= link_to company_job_path(current_company, job), id: "job_card_clickable" do%>
-        <div class="job_card">
-          <p class="job_title"><%= job.title %></p>
-          <!-- <div class="updates_section">
-            <i class="fa fa-whatsapp updates"></i>
-            <p class="updates"></p>
-          </div>
-          <div class="updates_section">
-            <i class="fa fa-inbox updates"></i>
-            <p class="updates"></p>
-          </div> -->
+        <div class="col-md-3 job_card_div">
+          <%= link_to company_job_path(current_company, job), id: "job_card_clickable" do%>
+            <div class="job_card">
+              <p class="job_title"><%= job.title %></p>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-      </div>
       <% end %>
     </div>
   </div>

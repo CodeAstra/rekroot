@@ -295,28 +295,88 @@ body.home-index {
   }
 }
 
-.member_card {
-            height: 60px;
-            width: 100%;
-            background-color: #F5F5F5;
-            box-shadow: 0px 0px 2px #121212;
-            margin-top: 10px;
-            padding: 5px;
+// all users page - css
 
-            .member_card_name {
-              .member_name {
-                font-family: Lato; 
-                font-weight: bold;
-                font-size: 17px;            
+#all_users_page {
+  /*margin-top: 50px;*/
+  min-height: 100vh;
+  height: 100%;
+  background-image: url('background2.png'); 
+
+  #users_container {
+    width: 80%;
+
+    #users_div {
+      margin-top: 80px;
+      height: 100%;
+      
+      .user_card_div {
+        padding: 10px;
+
+        .user_invite_card{
+          background-color: #272727;
+        }
+          #remove_user{
+            float: right;
+            font-size: 30px;
+          }
+          #invite_user_link {
+            text-decoration: none;          
+
+            #invite_user {
+              margin: auto;
+              font-family: Lato;
+              font-size: 1.6em;
+              color: #B0A97B;
+              text-align: center;
+              margin-top: 45px;
+              cursor: pointer;
+
+              &:hover {
+                color: white;
               }
-              #remove_user {
-                  float: right;
+
+              #plus {
+                margin-right: 5px;
               }
-            } 
+            }
+          }
+        .user_card, .user_invite_card {
+        height: 140px;
+        padding: 5px;
+        max-width: 250px;
+        -webkit-box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
+        -moz-box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
+        box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
+        margin-left: auto;
+        margin-right: auto;
+        }
+        .user_card{
+          background-color: #5B99D8;
+          a{
+            color: rgb(218, 210, 210);
+          }
+          a:hover{
+            color: rgb(87, 82, 82);
           }
 
-
-
-
-
+          .user_card_details{
+            margin-top: 42px;
+            clear: both;
+            text-align: center;
+            color: white;
+            .user_card_name{
+              font-size: 16px;
+              font-weight:bold;
+              font-style: oblique;
+            }
+          }
+          &:hover {
+            box-shadow: 0px 0px 3px #000; 
+          } 
+        }
+      }
+    }
+  }
+}
 
