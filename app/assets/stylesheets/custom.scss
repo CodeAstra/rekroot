@@ -301,7 +301,7 @@ body.home-index {
   /*margin-top: 50px;*/
   min-height: 100vh;
   height: 100%;
-  background-image: url('background2.png'); 
+  background-color: #C7D0CE; 
 
   #users_container {
     width: 80%;
@@ -352,12 +352,12 @@ body.home-index {
         margin-right: auto;
         }
         .user_card{
-          background-color: #5B99D8;
+          background-color: #576E7C;
           a{
             color: rgb(218, 210, 210);
           }
           a:hover{
-            color: rgb(87, 82, 82);
+            color: #2E2F30;
           }
 
           .user_card_details{
