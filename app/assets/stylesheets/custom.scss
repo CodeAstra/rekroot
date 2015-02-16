@@ -295,7 +295,7 @@ body.home-index {
   }
 }
 
-// all users page - css
+/*all users page & invitations page- css*/
 
 #all_users_page {
   /*margin-top: 50px;*/
@@ -380,3 +380,13 @@ body.home-index {
   }
 }
 
+/*Modal styling*/
+#invite_colleagues_modal_dialog {
+  width: 480px;
+  #invite_colleagues_modal_content {
+  background-color: #B9C8C5;
+    h4{
+      font-size: 24px;
+    }  
+  }
+}

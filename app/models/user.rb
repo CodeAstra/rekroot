@@ -14,7 +14,7 @@
 #  current_sign_in_ip     :string
 #  last_sign_in_ip        :string
 #  confirmation_token     :string
-#  confirmed_at           :datetime
+#  rconfirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
 #  created_at             :datetime
