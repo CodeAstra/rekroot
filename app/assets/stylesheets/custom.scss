@@ -1,69 +1,168 @@
-#logo_icon {
-  color: #ff0000;
-  font-size: 3.5em;
-  margin-top: 30px;
+// Landing page - sign up and login
+
+
+
+#landing_page {
+
+  #header_section {
+    #logo_box {
+      height: 140px;
+      padding-top: 20px;
+      text-align: center;
+      
+      #logo_icon {
+        color: #ff0000;
+        font-size: 3.5em;
+        margin-top: 0px;
+      }
+
+      #name {
+        font-size: 3.5em;
+        font-family: 'Poiret One';
+        font-weight: bold;
+      }
+    }
+  }  
+
+  #caption_section {
+    #main_caption {
+      text-align: center;
+      font-family: Lato;
+      font-size: 1.2em;
+      font-style: italic;      
+    
+
+      #caption_text {
+        border-top: 1px solid #ff0000;
+        border-bottom: 1px solid #ff0000;
+
+        #red_marking {
+          color: #ff0000;
+        }
+      } 
+    }   
+  }
+
+     
+  #body_section {
+
+    margin-top: 10px;
+    #lp_explainer_section {
+      height: 190px;
+      .explainer_box_container {
+        height: 160px;
+        margin-top: 5px;
+        .explainer_boxes {
+          background-color: #FFFFFF;
+          height: 160px;
+          text-align: center;
+          padding: 5px;
+          border: 1px solid #e3e3e3;
+          box-shadow: 0px 0px 3px #b1b1b1;
+
+          .icons {
+            color: #FF5353;
+            display: inline-block;
+            font-size: 4em;
+          }
+
+          .icon_support_text {
+            color: #000;
+            font-family: Lato;
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+
+
+    #sign_up_box {
+
+      background-color: #FFFFFF;
+      height: 334px;
+      text-align: center;
+      padding: 10px;
+      border: 1px solid #e3e3e3;
+      box-shadow: 0px 0px 3px #b1b1b1;
+      margin-top: 60px;
+
+      .sign_up_fields {
+        margin-top: 2px;
+        height: 40px;
+        width:  200px;  
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .input_box {
+        border-radius: 4px  !IMPORTANT;
+      }
+
+      #sign_up_btn {
+        width: 150px;
+        margin-left: 25px;
+        margin-right: auto;
+      }
+      #log_in_link {
+        margin-left: 25px;
+      }
+
+      #log_in_chkbox {
+        margin-right: auto;
+        margin-left: 40px;
+      }
+    }
+  }
+
+  #authorization_section {
+
+    #sign_up_box_container {
+      padding-left: 45px;
+      padding-right: 45px;
+      
+      .sign_up_box {
+
+        background-image: url('background2.png');
+        border: 1px solid #F7F7F7;
+        box-shadow: 0px 0px 3px #5A5A5A;
+        padding-top: 10px;
+        border-radius: 0px;
+
+        .sign_up_fields {
+          margin-top: 2px;
+          height: 40px;
+          width:  200px;  
+          margin-left: auto;
+          margin-right: auto;
+
+          .input_box {
+            border-radius: 4px  !IMPORTANT;
+          }
+          #sign_up_btn {
+            width: 150px;
+            margin-left: 25px;
+            margin-right: auto;
+            font-weight: bold;
+            font-family: Lato;
+            font-size: 1.2em;
+          }
+
+          #log_in_chkbox {
+            margin-right: auto;
+            margin-left: 40px;
+          }
+        }
+
+        .shared_login {
+          height: 25px;
+          text-align: center;
+        }  
+      }
+    }          
+  }
 }
 
-#logo_box {
-  height: 180px;
-  padding-top: 20px;
-  text-align: center;
-  
-}
 
-#name {
-  font-size: 3.5em;
-  font-family: 'Poiret One';
-  font-weight: bold;
-}
-
-#main_caption {
-  text-align: center;
-  font-family: Lato;
-  font-size: 1.2em;
-  font-style: italic;
-  
-}
-
-#caption_text {
-  border-top: 1px solid #ff0000;
-  border-bottom: 1px solid #ff0000;
-}
-
-#red_marking {
-  color: #ff0000;
-}
-
-/*sign up */
-
-#sign_up_box {
-  margin-top: 80px;
-}
-.sign_up_fields {
-  margin-top: 2px;
-  height: 40px;
-  width:  200px;  
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.input_box {
-  border-radius: 4px  !IMPORTANT;
-}
-
-#sign_up_btn {
-  width: 150px;
-  margin-left: 25px;
-  margin-right: auto;
-}
-#log_in_link {
-  margin-left: 25px;
-}
-
-#log_in_chkbox {
-  margin-right: auto;
-  margin-left: 40px;
-}
 
 body.home-index {
   .job-card{
@@ -76,11 +175,47 @@ body.home-index {
   }
 }
 
+// company create page
+#company_add_container {
+
+  margin-top: 200px;
+  font-family: Lato;
+
+  #create_company_form_holder {
+
+    text-align: center;
+    border: 1px solid #b2b2b2;
+    background-color: #e7e7e7;
+
+    #company_add_title {
+      margin-bottom: 30px;
+      margin-top: 10px;
+
+      h4 {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+    }
+
+    
+
+    .company_add_elements {
+      margin: auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  
+}
+
+
+
+
 // all jobs page - css
 
 #all_jobs_page {
   /*margin-top: 50px;*/
-  min-height: 100vh;
+  min-height: 94vh;
   height: 100%;
   background-image: url('background2.png'); 
 
@@ -120,28 +255,25 @@ body.home-index {
             .updates {
               display: inline;
             }
-          }
+          }                   
 
-          #add_job_link {
-            text-decoration: none;          
+          #add_job {
+            margin: auto;
+            font-family: Lato;
+            font-size: 1.6em;
+            color: #45422D;
+            text-align: center;
+            margin-top: 45px;
 
-            #add_job {
-              margin: auto;
-              font-family: Lato;
-              font-size: 1.6em;
+            &:hover {
               color: #B0A97B;
-              text-align: center;
-              margin-top: 45px;
+            }
 
-              &:hover {
-                color: #45422D;
-              }
-
-              #plus {
-                margin-right: 5px;
-              }
+            #plus {
+              margin-right: 5px;
             }
           }
+          
         }
 
         #job_card_clickable {
@@ -441,11 +573,11 @@ body.home-index {
 
 .dashboard_column_list {
   min-height: 100px;
-  border: 1px solid red;
+  // border: 1px solid red;
 
   .ui-state-highlight {
     height: 70px;
-    background-color: yellow;
-    border: 1px solid orange;
+    background-color: #b3b3b3;
+    // border: 1px solid orange;
   }
 }

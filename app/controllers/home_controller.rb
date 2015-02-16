@@ -5,10 +5,10 @@ class HomeController < ApplicationController
       # render_dashboard
       # render 'companies/new'
     
-      if current_user.company_id == nil
+      if current_user.company.nil?
         redirect_to new_company_path
       else 
-        @company_id = current_user.company_id
+        @company = current_user.company
         redirect_to company_jobs_path(@company_id)
       end 
 

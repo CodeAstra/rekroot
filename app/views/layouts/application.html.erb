@@ -25,7 +25,7 @@
 </head>
 <body class="<%= controller_name %>-<%= action_name %>">
 
-<%= render 'layouts/header' %>
+<%= render 'layouts/header' if user_signed_in? %>
 <%= yield %>
 
 </body>

@@ -1,33 +1,15 @@
-
-
-
 <div class="container-fluid" id ="all_jobs_page">
   <div class="container" id="jobs_container">
     <div class="row" id ="jobs_div">
       <div class="col-md-3 job_card_div">    
         <div class="job_card">
-          <%= link_to new_company_job_path(@company), id: "add_job_link" do %>
-          <p id="add_job" data-toggle="modal" data-target="#myModal" ><i class="fa fa-plus-square-o" id = "plus"></i>Add Job</p>
-          <% end %>
+          <%= render partial: 'jobs/new', locals: {company: @company, job: @new_job} %>  
         </div>        
       </div>
-      <% @jobs.each do |job| %>
-      <div class="col-md-3 job_card_div">
-      <%= link_to company_job_path(@company, job), id: "job_card_clickable" do%>
-        <div class="job_card">
-          <p class="job_title"><%= job.title %></p>
-          <!-- <div class="updates_section">
-            <i class="fa fa-whatsapp updates"></i>
-            <p class="updates"></p>
-          </div>
-          <div class="updates_section">
-            <i class="fa fa-inbox updates"></i>
-            <p class="updates"></p>
-          </div> -->
-        </div>
-      <% end %>
+        <% @jobs.each do |job| %>
+          <%= render partial: 'jobs/job', locals: {company: @company, job: job} %>
+        <% end %>
       </div>
-      <% end %>
-    </div>
   </div>
 </div>  
+

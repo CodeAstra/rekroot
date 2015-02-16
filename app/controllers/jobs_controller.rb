@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!
-  before_action :fetch_company, only: [:index, :show, :destroy]
+  before_action :fetch_company, only: [:index, :new, :show, :destroy]
   before_action :fetch_job, only: [:show, :destroy]
   
 
@@ -10,11 +10,7 @@ class JobsController < ApplicationController
 
   def create
     @job=current_user.company.jobs.new(job_params)
-    if @job.save 
-      redirect_to company_jobs_path
-    else 
-      render 'new'
-    end
+    @job_save_success = @job.save
   end
 
   def show     
@@ -37,6 +33,7 @@ class JobsController < ApplicationController
 
   def index 
     @jobs = @company.jobs.all
+    @new_job = Job.new
   end
 
   def destroy     

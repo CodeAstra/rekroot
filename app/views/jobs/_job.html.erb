@@ -1,0 +1,7 @@
+<div class="col-md-3 job_card_div">
+  <%= link_to company_job_path(company, job), id: "job_card_clickable" do%>
+    <div class="job_card">
+      <p class="job_title"><%= job.title %></p>
+    </div>
+  <% end %>
+</div>
