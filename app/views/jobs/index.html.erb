@@ -6,9 +6,7 @@
           <%= render partial: 'jobs/new', locals: {company: @company, job: @new_job} %>  
         </div>        
       </div>
-        <% @jobs.each do |job| %>
-          <%= render partial: 'jobs/job', locals: {company: @company, job: job} %>
-        <% end %>
+        <%= render(@jobs) %>
       </div>
   </div>
 </div>  

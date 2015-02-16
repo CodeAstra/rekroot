@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!
-  before_action :fetch_company, only: [:index, :new, :show, :destroy]
+  before_action :fetch_company, only: [:index, :create, :new, :show, :destroy]
   before_action :fetch_job, only: [:show, :destroy]
   
 
@@ -11,6 +11,8 @@ class JobsController < ApplicationController
   def create
     @job=current_user.company.jobs.new(job_params)
     @job_save_success = @job.save
+    # @job.update_attribute(:company_id, @company.id)
+    
   end
 
   def show     
