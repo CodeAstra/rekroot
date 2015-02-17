@@ -15,4 +15,5 @@ class Job < ActiveRecord::Base
   belongs_to :company
   validates :title, presence: true, length: {maximum: 140}
   has_many :applicants
+  has_many :questions
 end

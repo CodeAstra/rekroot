@@ -242,7 +242,10 @@ DEPENDENCIES
   guard-livereload
   jbuilder (~> 2.0)
   jquery-rails
+<<<<<<< HEAD
   jquery-ui-rails
+=======
+>>>>>>> origin/develop
   letter_opener
   rails (= 4.2.0)
   sass-rails (~> 5.0)

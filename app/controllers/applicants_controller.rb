@@ -42,6 +42,7 @@ class ApplicantsController < ApplicationController
 
 
   private 
+
     def fetch_job
       @job = @company.jobs.find(params[:job_id])
     end 

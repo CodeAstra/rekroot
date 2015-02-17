@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       end
 
       put 'sort_applicants'
-    end     
+    end   
   end 
 
 
