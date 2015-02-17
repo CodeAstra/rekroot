@@ -1,0 +1,7 @@
+
+<div id="comment_entry_div">
+  <%= simple_form_for [company, job, applicant, comment], remote: true do |f|%>
+    <%= f.input :comment, as: :text, autofocus: true, input_html: {class: "comment_input"} %>
+    <%= f.button :submit, "Save", class: "btn btn-success", id: "submit_comment" %>
+  <% end %>
+</div>

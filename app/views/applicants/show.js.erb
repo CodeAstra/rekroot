@@ -1,0 +1,3 @@
+$('#applicant_details_<%= @applicant.id %>').remove();
+$('#applicant_<%= @applicant.id %>').append('<%= j render(partial: "applicants/lightbox", locals: {applicant: @applicant}) %>');
+$('#applicant_details_<%= @applicant.id %>').modal('show');

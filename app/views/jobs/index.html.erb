@@ -18,5 +18,11 @@
         </div>
       <% end %>
     </div>
+          <%= render partial: 'jobs/new', locals: {company: @company, job: @new_job} %>  
+        </div>        
+      </div>
+        <%= render(@jobs) %>
+      </div>
   </div>
 </div>  
+

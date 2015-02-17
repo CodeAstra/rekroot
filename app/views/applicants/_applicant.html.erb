@@ -1,5 +1,5 @@
-<li class="ui-state-default" id="applicant_<%= applicant.id %>" data-toggle="modal" data-target="#applicant_details_<%= applicant.id %>" >
-  <div class="applicant_card">
+<div class="applicant" id="applicant_<%= applicant.id %>">
+  <div class="applicant_card" data-target="#show_applicant_details_<%= applicant.id %>">
     <div class="applicant_card_name">
       <p class="applicant_name"><%= applicant.name %></p>
     </div>
@@ -16,4 +16,5 @@
       </div> 
     </div>
   </div>
+  <%= link_to "Show_details", company_job_applicant_path(@company, @job, applicant), id: "show_applicant_details_#{applicant.id}", class: "hidden", remote: true %>                
 </div>

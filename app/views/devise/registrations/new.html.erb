@@ -1,12 +1,15 @@
-    <div class="container">
-      <div class="row">
+    <div class="container" id = "landing_page">
+      <div class="row" id = "header_section">
         <div class="col-sm-6 col-sm-offset-3" id = "logo_box">    
           <i class="fa fa-skyatlas fa-4x" id ="logo_icon"></i>
           <p id="name">REKROOT</p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2" id = "main_caption"><p id="caption_text">All applicants<span id="red_marking">.</span> Ratings<span id="red_marking">.</span> Conversations<span id="red_marking">.</span> Stages<span id="red_marking">.</span> Teamwork<span id="red_marking">.</span> Wow<span id="red_marking"> !</span></p></div>
+
+      <div class="row" id = "caption_section">
+        <div class="col-sm-8 col-sm-offset-2" id = "main_caption">
+          <p id="caption_text">Recruitment software for Startups - Use your time and energy to change the world!<span id="red_marking">!</span></p>
+        </div>
       </div>
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4" id ="sign_up_box">
@@ -17,30 +20,62 @@
                 <%= f.text_field :name, autofocus: true, class: "form-control input_box", placeholder: "Name"  %>
               </div>
 
-              <div class="field input-group sign_up_fields">       
-                <%= f.email_field :email, autofocus: true, class: "form-control input_box", placeholder: "Email Id"  %>
-              </div>
-
-              <div class="field input-group sign_up_fields">
-                
-                
-                <%= f.password_field :password, autocomplete: "off", class: "form-control input_box", placeholder: "Password"  %>
-              </div>
-
-              <div class="field input-group sign_up_fields">
-                
-                <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control input_box", placeholder: " Confirm Password" %>
-              </div>
-
-              <div class="actions input-group sign_up_fields">
-                <%= f.submit "Sign up", class: "btn btn-danger", id: "sign_up_btn" %>
-              </div>              
-
-            <% end %>
-          <%= render "devise/shared/links" %>
-
+      <div class="row" id="body_section">
+        <div class="col-md-12" id="lp_explainer_section">
+          <div class="col-sm-3  explainer_box_container">
+            <div class="explainer_boxes">
+              <span class = 'glyphicon glyphicon-time icons'></span>
+              <h3 class = "icon_support_text">Get things done faster and easier!</h3>
+            </div>
+          </div>      
+          <div class="col-sm-3  explainer_box_container">
+            <div class="explainer_boxes">
+              <span class = 'glyphicon glyphicon-th icons'></span>
+              <h3 class = "icon_support_text">One board for all applicants from all job boards!</h3>
+            </div>
+          </div>   
+          <div class="col-sm-3  explainer_box_container">
+            <div class="explainer_boxes">
+              <span class = 'glyphicon glyphicon-inbox icons'></span>
+              <h3 class = "icon_support_text">Feedback and discussions with teammates in one place!</h3>
+            </div>
+          </div>   
+          <div class="col-sm-3  explainer_box_container">
+            <div class="explainer_boxes">
+              <span class = 'glyphicon glyphicon-cloud icons'></span>
+              <h3 class = "icon_support_text">All data on the cloud, access anywhere!</h3>
+            </div>
+          </div>   
         </div>
       </div>
+
+              
+
+      <div class="row" id="authorization_section">
+        <div class="col-sm-4 col-sm-offset-4" id ="sign_up_box_container">
+          <div class="sign_up_box">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= devise_error_messages! %>
+                <div class="field input-group sign_up_fields">       
+                  <%= f.email_field :email, autofocus: true, class: "form-control input_box", placeholder: "Email Id"  %>
+                </div>
+
+                <div class="field input-group sign_up_fields">        
+                  <%= f.password_field :password, autocomplete: "off", class: "form-control input_box", placeholder: "Password"  %>
+                </div>
+
+                <div class="field input-group sign_up_fields">                
+                  <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control input_box", placeholder: " Confirm Password" %>
+                </div>
+
+                <div class="actions input-group sign_up_fields">
+                  <%= f.submit "Sign up", class: "btn btn-danger", id: "sign_up_btn" %>
+                </div> 
+              <% end %>
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>        
+      </div>  
     </div>
 
     

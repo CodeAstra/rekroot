@@ -1,69 +1,168 @@
-#logo_icon {
-  color: #ff0000;
-  font-size: 3.5em;
-  margin-top: 30px;
+// Landing page - sign up and login
+
+
+
+#landing_page {
+
+  #header_section {
+    #logo_box {
+      height: 140px;
+      padding-top: 20px;
+      text-align: center;
+      
+      #logo_icon {
+        color: #ff0000;
+        font-size: 3.5em;
+        margin-top: 0px;
+      }
+
+      #name {
+        font-size: 3.5em;
+        font-family: 'Poiret One';
+        font-weight: bold;
+      }
+    }
+  }  
+
+  #caption_section {
+    #main_caption {
+      text-align: center;
+      font-family: Lato;
+      font-size: 1.2em;
+      font-style: italic;      
+    
+
+      #caption_text {
+        border-top: 1px solid #ff0000;
+        border-bottom: 1px solid #ff0000;
+
+        #red_marking {
+          color: #ff0000;
+        }
+      } 
+    }   
+  }
+
+     
+  #body_section {
+
+    margin-top: 10px;
+    #lp_explainer_section {
+      height: 190px;
+      .explainer_box_container {
+        height: 160px;
+        margin-top: 5px;
+        .explainer_boxes {
+          background-color: #FFFFFF;
+          height: 160px;
+          text-align: center;
+          padding: 5px;
+          border: 1px solid #e3e3e3;
+          box-shadow: 0px 0px 3px #b1b1b1;
+
+          .icons {
+            color: #FF5353;
+            display: inline-block;
+            font-size: 4em;
+          }
+
+          .icon_support_text {
+            color: #000;
+            font-family: Lato;
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+
+
+    #sign_up_box {
+
+      background-color: #FFFFFF;
+      height: 334px;
+      text-align: center;
+      padding: 10px;
+      border: 1px solid #e3e3e3;
+      box-shadow: 0px 0px 3px #b1b1b1;
+      margin-top: 60px;
+
+      .sign_up_fields {
+        margin-top: 2px;
+        height: 40px;
+        width:  200px;  
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .input_box {
+        border-radius: 4px  !IMPORTANT;
+      }
+
+      #sign_up_btn {
+        width: 150px;
+        margin-left: 25px;
+        margin-right: auto;
+      }
+      #log_in_link {
+        margin-left: 25px;
+      }
+
+      #log_in_chkbox {
+        margin-right: auto;
+        margin-left: 40px;
+      }
+    }
+  }
+
+  #authorization_section {
+
+    #sign_up_box_container {
+      padding-left: 45px;
+      padding-right: 45px;
+      
+      .sign_up_box {
+
+        background-image: url('background2.png');
+        border: 1px solid #F7F7F7;
+        box-shadow: 0px 0px 3px #5A5A5A;
+        padding-top: 10px;
+        border-radius: 0px;
+
+        .sign_up_fields {
+          margin-top: 2px;
+          height: 40px;
+          width:  200px;  
+          margin-left: auto;
+          margin-right: auto;
+
+          .input_box {
+            border-radius: 4px  !IMPORTANT;
+          }
+          #sign_up_btn {
+            width: 150px;
+            margin-left: 25px;
+            margin-right: auto;
+            font-weight: bold;
+            font-family: Lato;
+            font-size: 1.2em;
+          }
+
+          #log_in_chkbox {
+            margin-right: auto;
+            margin-left: 40px;
+          }
+        }
+
+        .shared_login {
+          height: 25px;
+          text-align: center;
+        }  
+      }
+    }          
+  }
 }
 
-#logo_box {
-  height: 180px;
-  padding-top: 20px;
-  text-align: center;
-  
-}
 
-#name {
-  font-size: 3.5em;
-  font-family: 'Poiret One';
-  font-weight: bold;
-}
-
-#main_caption {
-  text-align: center;
-  font-family: Lato;
-  font-size: 1.2em;
-  font-style: italic;
-  
-}
-
-#caption_text {
-  border-top: 1px solid #ff0000;
-  border-bottom: 1px solid #ff0000;
-}
-
-#red_marking {
-  color: #ff0000;
-}
-
-/*sign up */
-
-#sign_up_box {
-  margin-top: 80px;
-}
-.sign_up_fields {
-  margin-top: 2px;
-  height: 40px;
-  width:  200px;  
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.input_box {
-  border-radius: 4px  !IMPORTANT;
-}
-
-#sign_up_btn {
-  width: 150px;
-  margin-left: 25px;
-  margin-right: auto;
-}
-#log_in_link {
-  margin-left: 25px;
-}
-
-#log_in_chkbox {
-  margin-right: auto;
-  margin-left: 40px;
-}
 
 body.home-index {
   .job-card{
@@ -76,11 +175,47 @@ body.home-index {
   }
 }
 
+// company create page
+#company_add_container {
+
+  margin-top: 200px;
+  font-family: Lato;
+
+  #create_company_form_holder {
+
+    text-align: center;
+    border: 1px solid #b2b2b2;
+    background-color: #e7e7e7;
+
+    #company_add_title {
+      margin-bottom: 30px;
+      margin-top: 10px;
+
+      h4 {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+    }
+
+    
+
+    .company_add_elements {
+      margin: auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  
+}
+
+
+
+
 // all jobs page - css
 
 #all_jobs_page {
   /*margin-top: 50px;*/
-  min-height: 100vh;
+  min-height: 94vh;
   height: 100%;
   background-image: url('background2.png'); 
 
@@ -120,28 +255,25 @@ body.home-index {
             .updates {
               display: inline;
             }
-          }
+          }                   
 
-          #add_job_link {
-            text-decoration: none;          
+          #add_job {
+            margin: auto;
+            font-family: Lato;
+            font-size: 1.6em;
+            color: #45422D;
+            text-align: center;
+            margin-top: 45px;
 
-            #add_job {
-              margin: auto;
-              font-family: Lato;
-              font-size: 1.6em;
+            &:hover {
               color: #B0A97B;
-              text-align: center;
-              margin-top: 45px;
+            }
 
-              &:hover {
-                color: #45422D;
-              }
-
-              #plus {
-                margin-right: 5px;
-              }
+            #plus {
+              margin-right: 5px;
             }
           }
+          
         }
 
         #job_card_clickable {
@@ -185,7 +317,10 @@ body.home-index {
     margin-top : 8px;
     font-size: 1.1em;
     font-family: Lato;
+
     padding: 5px 10px 0px 10px;
+    margin-right: 5px;
+
 
   }
 }
@@ -195,19 +330,34 @@ body.home-index {
 // Job Dashboard Page 
 
 #job_dashboard_page {
-  min-height: 100vh;
-  height: 100%;
+  // min-
+  height: 92vh;
+  // height: 100%;
   background-image: url('background2.png'); 
 
-  #job_dashboard_title {
-    font-family: Lato;
-    font-weight: bold;
-    margin-left: 5px;
-    text-align: center;
+  #jobs_div {
+    margin-top: 10px;
+
+    #job_dashboard_title {
+      font-family: Lato;
+      font-weight: bold;
+      margin-left: 5px;
+      text-align: left;
+      display: inline;
+    }
+    #job_delete_btn {
+      padding: 1px 6px;
+      font-size: 0.95em;   
+      margin-right: 5px;   
+    }
   }
+  
 
   #job_dashboard_column_container {
-    height: 800px;
+    // height: 800px;
+    height: 84vh;
+    margin-top: 10px;
+    
 
     .job_dashboard_column_holder {
 
@@ -216,7 +366,8 @@ body.home-index {
 
 
       .job_dashboard_column {
-        height: 800px;
+        // height: 800px;
+        height: 84vh;
         background-color: #ffffff;              
         -webkit-box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
         -moz-box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
@@ -360,6 +511,40 @@ body.home-index {
             color: #2E2F30;
           }
 
+#modal-dialog {
+
+  width: 700px; 
+
+  #applicant_modal {
+    min-height: 200px;
+    max-height: 800px; 
+    padding-left: 15px;
+    padding-right: 15px;   
+
+    .modal-header {
+
+      padding-left: 0px;
+      padding-right: 0px;
+
+      h4 {
+        display: inline;
+        font-family: Lato;
+        font-size: 1.2em;
+      }
+
+      h6{
+        display: inline-block;
+        font-family: Lato;
+        font-size: 0.8em;
+      }
+
+      .close {
+        margin-top: 3px;
+      }
+
+      .delete_applicant {
+        display: inline;
+
           .user_card_details{
             margin-top: 42px;
             clear: both;
@@ -380,6 +565,7 @@ body.home-index {
   }
 }
 
+
 /*Modal styling*/
 #invite_colleagues_modal_dialog {
   width: 480px;
@@ -393,4 +579,107 @@ body.home-index {
 /*Remove job modal styling*/
 #remove_job_modal_dialog {
   width: 285px;
+
+        #delete_applicant_button {
+          display: inline;
+          padding: 1px 4px;  
+          margin-right: 10px;
+          font-size: 0.95em;
+          position: relative;
+          top: -20px;
+          right: 10px;
+        }
+      }
+    }
+
+    .status {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      .status_buttons {
+        padding: 1px 5px;
+        font-size: 0.8em;
+
+      }
+
+      .current_status {
+        font-size: 1em;
+        background-color: orange; 
+        font-weight: bold;
+      }
+    }
+    .modal-comment {
+
+      border-top: 1px solid #d2d2d2;
+
+      #comment_entry_div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        #submit_comment {
+          padding: 1px 4px;  
+          font-size: 1em; 
+        }
+      }
+
+      #all_comments {
+
+          height: 400px;
+          overflow: scroll;
+          padding-right: 10px;
+          border-top: 1px solid #d2d2d2;
+          
+        .comment_div {
+          padding-bottom: 5px;
+          border-bottom: 1px solid #c3c3c3;
+          margin-top: 10px;
+          p {
+            margin: 0px;
+          }
+
+          
+
+          .comment_commenter {
+            margin-top: 5px;
+            font-size: 0.9em;
+            font-family: Lato;            
+            font-weight: bold;
+            display: inline;
+          }
+          .comment_text {
+            word-wrap: break-word;
+            font-size: 1em;
+            font-family: Lato;
+            background-color: #f1f1f1;
+            box-shadow: 0px 0px 2px #323232;
+            padding-left: 10px;
+            padding-right: 10px;
+            display: inline;
+            width: 90%;
+            float: right;
+
+          }
+          .comment_created_time {
+            margin-top: 5px;
+            font-size: 0.8em;
+            font-family: Lato;
+            color: grey;
+          }
+        }
+      }
+    }    
+  }
+}
+
+
+
+
+.dashboard_column_list {
+  min-height: 100px;
+  // border: 1px solid red;
+
+  .ui-state-highlight {
+    height: 70px;
+    background-color: #b3b3b3;
+    // border: 1px solid orange;
+  }
 }

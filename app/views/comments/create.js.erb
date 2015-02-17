@@ -1,0 +1,8 @@
+
+
+
+<% if @comment_save %>
+  $('.modal-comment > #all_comments').prepend('<%= j render(@comment) %>');
+  $('.comment_input').val("");
+<% end %>
+

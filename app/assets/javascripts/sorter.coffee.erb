@@ -1,0 +1,26 @@
+@Sorter =
+  makeSortable: (company_id, job_id) ->
+    $('.dashboard_column_list').sortable
+      connectWith: ".dashboard_column_list"
+      placeholder: "ui-state-highlight"
+      update: ->
+        $.ajax
+          url: "/companies/#{company_id}/jobs/#{job_id}/sort_applicants"
+          data:
+            applicant_ids: Sorter.serializeCards()
+          type: 'PUT'
+
+  serializeCards: ->
+    cards = {}
+    cards[<%= Applicant::Status::APPLIED %>] = Sorter.serializeCardsInColumn('#applied_applicants .applicant')
+    cards[<%= Applicant::Status::SHORTLISTED %>] = Sorter.serializeCardsInColumn('#shortlisted_applicants .applicant')
+    cards[<%= Applicant::Status::SCREENING %>] = Sorter.serializeCardsInColumn('#screening_applicants .applicant')
+    cards[<%= Applicant::Status::PREHIRE %>] = Sorter.serializeCardsInColumn('#prehire_applicants .applicant')
+    cards[<%= Applicant::Status::OFFERED %>] = Sorter.serializeCardsInColumn('#offered_applicants .applicant')
+    cards
+
+  serializeCardsInColumn: (cards_selector) ->
+    card_ids = []
+    for applicant in $(cards_selector)
+      card_ids.push(applicant.id.split("_")[1])
+    card_ids

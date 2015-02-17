@@ -8,6 +8,12 @@ Rails.application.routes.draw do
       resources :applicants do
       end 
     end     
+        resources :comments do
+        end
+      end
+
+      put 'sort_applicants'
+    end   
   end 
 
 

@@ -1,25 +1,30 @@
-  <div class="container">
-      <div class="row">
-        <div class="col-sm-4 col-sm-offset-4">
 
-          <%= simple_form_for(@company) do |f| %>
 
-          <div class="field input-group">
-            <%= f.input :name, autofocus: true, placeholder: "Company Name" %>
-          </div>
+<div class="container" id = "company_add_container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4" id = "create_company_form_holder">
 
-          <div class="field input-group">
-            <%= f.input :website, placeholder: "Website", as: :text %>
-          </div>
+      <div id= "company_add_title"><h4>Welcome! Create a Company</h4></div>
 
-          <div class="actions input-group">
-            <%= f.button :submit, "Create Company", class: "btn btn-primary", id: "create_job_btn" %>
-          </div>
+      <%= simple_form_for(@company) do |f| %>
 
-          <% end %>
-
-        </div>
+      <div class="field input-group company_add_elements" >
+        <%= f.input :name, placeholder: "Company Name", label: "Enter your Company's Name*" %>
       </div>
+
+      <div class="field input-group company_add_elements">
+        <%= f.input :website, placeholder: "Website", as: :text %>
+      </div>
+
+      <div class="actions input-group company_add_elements">
+        <%= f.button :submit, "Create Company", class: "btn btn-primary", id: "create_job_btn" %>
+      </div>
+
+      <% end %>
+
     </div>
+  </div>
+</div>
+
 
     
