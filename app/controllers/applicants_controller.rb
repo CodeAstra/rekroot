@@ -21,6 +21,10 @@ class ApplicantsController < ApplicationController
 
   private 
 
+    def applicant_params 
+      params.require(:applicant).permit(:name, :email)
+    end 
+
     def fetch_job
       @job = @company.jobs.find(params[:job_id])
     end 

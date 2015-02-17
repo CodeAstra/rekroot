@@ -11,18 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208102615) do
+ActiveRecord::Schema.define(version: 20150126120129) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+
     t.date     "dob"
     t.integer  "gender"
     t.string   "phone"
     t.integer  "job_id"
     t.integer  "status",     default: 1
+    t.boolean  "confirm",    default: false
   end
 
   add_index "applicants", ["job_id"], name: "index_applicants_on_job_id"
@@ -43,6 +45,12 @@ ActiveRecord::Schema.define(version: 20150208102615) do
   end
 
   add_index "jobs", ["company_id"], name: "index_jobs_on_company_id"
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "question"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
