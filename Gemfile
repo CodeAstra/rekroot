@@ -47,6 +47,8 @@ group :development, :test do
 
   gem 'guard-annotate'
 
+  gem 'guard-livereload'
+
   gem 'letter_opener'
 
 

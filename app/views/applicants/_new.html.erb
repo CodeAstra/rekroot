@@ -17,7 +17,7 @@
           <h2><%= @job.title %></h2>
           <h4><%= @job.description %></h4>
 
-          <%= simple_form_for [company, job, applicant], id: "applicant_form", remote: true do |f|%>
+          <%= simple_form_for [company, job, applicant], :html => { :id => 'applicant_form' }, remote: true do |f|%>
             <!-- <div class="field input-group"> -->
               <%= f.input :name, autofocus: true, placeholder: "Applicant's Name", class: "test" %>
             <!-- </div> -->

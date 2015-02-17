@@ -75,7 +75,11 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    em-websocket (0.5.1)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
+    eventmachine (1.0.4)
     execjs (2.2.2)
     ffi (1.9.6)
     font-awesome-sass (4.2.2)
@@ -96,8 +100,13 @@ GEM
       annotate (~> 2.4, >= 2.4.0)
       guard-compat (~> 1.2, >= 1.2.1)
     guard-compat (1.2.1)
+    guard-livereload (2.4.0)
+      em-websocket (~> 0.5)
+      guard (~> 2.8)
+      multi_json (~> 1.8)
     hike (1.2.3)
     hitimes (1.2.2)
+    http_parser.rb (0.6.0)
     i18n (0.7.0)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
@@ -230,6 +239,7 @@ DEPENDENCIES
   font-awesome-sass
   guard
   guard-annotate
+  guard-livereload
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
