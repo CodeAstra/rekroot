@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20150126120129) do
 
   create_table "applicants", force: :cascade do |t|
@@ -23,19 +24,51 @@ ActiveRecord::Schema.define(version: 20150126120129) do
     t.string   "phone"
     t.integer  "job_id"
     t.boolean  "confirm",    default: false
+    t.integer  "status",     default: 1
+    t.integer  "position",   default: 1
   end
 
   add_index "applicants", ["job_id"], name: "index_applicants_on_job_id"
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "comment"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.integer  "applicant_id"
+  end
+
+  add_index "comments", ["applicant_id"], name: "index_comments_on_applicant_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name"
+    t.string   "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "owner_id"
+    t.integer  "company_id"
   end
 
-  add_index "jobs", ["owner_id"], name: "index_jobs_on_owner_id"
+  add_index "jobs", ["company_id"], name: "index_jobs_on_company_id"
+
+  create_table "questions", force: :cascade do |t|
+    t.text     "question"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "question_type", default: 1
+    t.text     "options"
+    t.integer  "job_id"
+    t.boolean  "mandatory",     default: false
+  end
+
+  add_index "questions", ["job_id"], name: "index_questions_on_job_id"
 
   create_table "questions", force: :cascade do |t|
     t.string   "question"
@@ -61,8 +94,10 @@ ActiveRecord::Schema.define(version: 20150126120129) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "role",                   default: 2
+    t.integer  "company_id"
   end
 
+  add_index "users", ["company_id"], name: "index_users_on_company_id"
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

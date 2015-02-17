@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
 
-  resources :jobs do 
-    resources :applicants do
-      get 'apply'
-      resources :answers do 
-      end 
-      
-    end
+  resources :companies do 
+    resources :users do 
+    end 
 
-    resources :questions do
-    end
+    resources :jobs do 
+      resources :applicants do
+        resources :comments do
+        end
+      end
 
+      put 'sort_applicants'
+    end   
   end 
 
 
@@ -27,7 +28,7 @@ devise_scope :user do
   end
   
   unauthenticated :user do
-    root :to =>  'devise/registrations#new', as: :unauthenticated_root
+    root :to =>  'devise/sessions#new', as: :unauthenticated_root
   end
 end
 

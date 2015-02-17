@@ -1,5 +1,7 @@
 class ApplicantsController < ApplicationController
-  before_action :fetch_job
+  before_action :fetch_company, :fetch_job
+  before_action :fetch_last_positon, only: [:create]
+
 
 
   def new
@@ -7,23 +9,57 @@ class ApplicantsController < ApplicationController
   end
 
   def create 
-    @applicant = @job.applicants.new(applicant_params)
-    @applicant.save!
-    ApplicantsMailer.apply_to(@applicant).deliver
-    render 'applicants/partials/confirm_to_apply'
-
+    @applicant=@job.applicants.new(applicant_params)     
+    @save_success = @applicant.save    
+    @applicant.update_attributes(position: @last_position+1)
   end 
 
-  def apply 
+  def index 
   end 
+
+
+  def show 
+    @applicant = @job.applicants.find(params[:id])
+    @comments = @applicant.comments.reverse_chron.all
+    @new_comment = @applicant.comments.new
+  end
+
+  def edit 
+  end
+
+  def update 
+    @applicant = Applicant.find(params[:id])
+    @applicant.update_attributes(status_params)  
+    redirect_to :back
+  end 
+
+
+  def destroy 
+    @applicant = @job.applicants.find(params[:id])
+    @applicant.delete
+    redirect_to company_job_path(@company, @job) 
+  end 
+
 
   private 
 
-    def applicant_params 
-      params.require(:applicant).permit(:name, :email)
+    def fetch_job
+      @job = @company.jobs.find(params[:job_id])
     end 
 
-    def fetch_job
-      @job = Job.find(params[:job_id])
+    def fetch_company 
+      @company = Company.find(params[:company_id])
+    end
+
+    def fetch_last_positon
+      @last_position = @job.applicants.where(status: 1).count + 1
+    end 
+
+    def applicant_params
+      params.require(:applicant).permit(:name, :email)
+    end
+
+    def status_params 
+      params.require(:applicant).permit(:status)
     end 
 end

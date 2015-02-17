@@ -1,0 +1,4 @@
+<% if @job_save_success %>
+  $('#new_job_myModal').modal('hide');
+  $('#jobs_div').append('<%= j render(@job) %>');
+<% end %>

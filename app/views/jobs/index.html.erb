@@ -1,0 +1,13 @@
+<div class="container-fluid" id ="all_jobs_page">
+  <div class="container" id="jobs_container">
+    <div class="row" id ="jobs_div">
+      <div class="col-md-3 job_card_div">    
+        <div class="job_card">
+          <%= render partial: 'jobs/new', locals: {company: @company, job: @new_job} %>  
+        </div>        
+      </div>
+        <%= render(@jobs) %>
+      </div>
+  </div>
+</div>  
+

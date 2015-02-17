@@ -1,0 +1,32 @@
+<div class="applicant_add" data-toggle="modal" data-target="#new_job_myModal">
+  <p id="add_job"><i class="fa fa-plus-square-o" id = "plus"></i>Add Job</p>
+</div>
+
+
+
+
+<div class="modal fade" id="new_job_myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a New Job</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for [company, job], remote: true do |f| %>
+          <div class="field input-group">
+            <%= f.input :title, autofocus: true, placeholder: "Title" %>
+          </div>
+
+          <div class="field input-group">
+            <%= f.input :description, placeholder: "Description", as: :text %>
+          </div>
+
+          <div class="actions input-group">
+            <%= f.button :submit, "Create Job", class: "btn btn-primary", id: "create_job_btn" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

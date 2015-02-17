@@ -8,10 +8,12 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  dob        :date
-#  gender     :string
-#  photo      :string
-#  phone      :integer
+#  gender     :integer
+#  phone      :string
 #  job_id     :integer
+#  confirm    :boolean          default("f")
+#  status     :integer          default("1")
+#  position   :integer          default("1")
 #
 
 require 'test_helper'

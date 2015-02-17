@@ -1,6 +1,97 @@
-<div> 
-  <h2><%= @job.title %></h2>
-  <h4><%= @job.description %></h4>
 
-  <%= link_to "Apply", new_job_applicant_path(@job) %>
-</div>
+
+<div class="container-fluid" id ="job_dashboard_page">
+  
+  <div class="container-fluid">
+    <div class="row" id ="jobs_div">      
+      <h4 id="job_dashboard_title"><%= @job.title %></h4>     
+      <%= link_to "Remove Job", company_job_path(@company, @job), method: :delete, class: "btn btn-danger pull-right", id: "job_delete_btn", data: {confirm: "Are you sure?"} %>     
+    </div>
+
+
+    <div class="row" id="job_dashboard_column_container">      
+      <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_1">
+        <div class="job_dashboard_column">
+          <h5> Applied : <%= @applicants_applied_count %></h5>
+          <div class="applicant_card">            
+            <%= render partial: 'applicants/new', locals: {job: @job, company: @company, applicant: @new_applicant} %>            
+          </div>
+          
+          <div id="applied_applicants" class="dashboard_column_list">            
+              <% @applicants_applied.each do |applicant| %>
+                <%= render partial: 'applicants/applicant', locals: {applicant: applicant} %>
+              <% end %>            
+          </div>             
+        </div>
+      </div>
+
+
+
+
+
+      <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_2">
+        <div class="job_dashboard_column">
+          <h5> Shortlisted : <%= @applicants_shortlisted_count %></h5>
+          <div id="shortlisted_applicants" class="dashboard_column_list">            
+              <% @applicants_shortlisted.each do |applicant| %>
+                <%= render partial: 'applicants/applicant', locals: {applicant: applicant} %>
+              <% end %>            
+          </div>  
+        </div>
+      </div>
+
+
+
+
+      <div class="col-md-4 job_dashboard_column_holder" id="job_dashboard_column_3">
+        <div class="job_dashboard_column">
+          <h5> Screening : <%= @applicants_screening_count %></h5>
+          <div id="screening_applicants" class="dashboard_column_list">            
+              <% @applicants_screening.each do |applicant| %>
+                <%= render partial: 'applicants/applicant', locals: {applicant: applicant} %>
+              <% end %>            
+          </div> 
+        </div>
+      </div>
+
+
+
+
+      <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_4">
+        <div class="job_dashboard_column">
+          <h5> Pre-hire shortlist : <%= @applicants_prehire_count %></h5>
+          <div id="prehire_applicants" class="dashboard_column_list">            
+              <% @applicants_prehire.each do |applicant| %>
+                <%= render partial: 'applicants/applicant', locals: {applicant: applicant} %>
+              <% end %>            
+          </div> 
+        </div>
+      </div>
+
+
+
+      <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_5">
+        <div class="job_dashboard_column">
+          <h5> Offered : <%= @applicants_offered_count %></h5>
+          <div id="offered_applicants" class="dashboard_column_list">            
+              <% @applicants_offered.each do |applicant| %>
+                <%= render partial: 'applicants/applicant', locals: {applicant: applicant} %>
+              <% end %>            
+          </div> 
+        </div>
+      </div>  
+
+
+
+    </div>  
+  </div>  
+</div>  
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    console.log("Sorter Initialized");
+    Sorter.makeSortable(<%= @company.id %>, <%= @job.id %>);
+  });
+</script>
+
+
