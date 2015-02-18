@@ -19,19 +19,19 @@ Rails.application.routes.draw do
 
   # get 'jobs/:id/apply' => 'jobs#apply', as: :job_apply
 
-  devise_for :users
+
 
   # root  "home#index"
 devise_scope :user do
   authenticated :user do
-    root :to => 'home#index', :as => :authenticated_root
+    root :to => 'home#index', :as => :root
   end
   
   unauthenticated :user do
     root :to =>  'devise/sessions#new', as: :unauthenticated_root
   end
 end
-
+devise_for :users, :controllers => { :invitations => "invitations"}
 
 
   # The priority is based upon order of creation: first created -> highest priority.

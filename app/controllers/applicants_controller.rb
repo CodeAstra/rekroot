@@ -2,8 +2,6 @@ class ApplicantsController < ApplicationController
   before_action :fetch_company, :fetch_job
   before_action :fetch_last_positon, only: [:create]
 
-
-
   def new
     @applicant = @job.applicants.new
   end

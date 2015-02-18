@@ -47,14 +47,17 @@ group :development, :test do
 
   gem 'guard-annotate'
 
+  gem 'letter_opener'
+  
   gem 'guard-livereload'
 
-  gem 'letter_opener'
 
 end
 
 
 gem 'devise'
+
+gem 'devise_invitable'
 
 gem 'annotate'
 
