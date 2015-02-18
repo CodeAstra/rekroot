@@ -9,8 +9,7 @@ class ApplicationController < ActionController::Base
   protected 
 
   def current_company
-    return unless user_signed_in?
-    current_user.company
+    return current_user.try(:company)
   end
 
   def configure_permitted_parameters 

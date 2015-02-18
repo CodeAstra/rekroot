@@ -17,11 +17,6 @@
 #
 
 class Applicant < ActiveRecord::Base
-
-  belongs_to :job
-  validates :job_id, presence: true
-  validates :email, presence: true, format: { with: Devise::email_regexp}
-  
   module Gender
     MALE = 0
     FEMALE = 1
@@ -41,6 +36,7 @@ class Applicant < ActiveRecord::Base
       all.collect{|grp| grp = DESCRIPTION[grp]}      
     end
   end
+
 
   module Status 
     APPLIED = 1 
