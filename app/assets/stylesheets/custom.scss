@@ -239,6 +239,7 @@ body.home-index {
           box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
           margin-left: auto;
           margin-right: auto;
+          cursor: pointer;
           
           .job_title {
             font-family: Lato;
@@ -372,6 +373,7 @@ body.home-index {
         margin-left: auto;
         margin-right: auto;
         padding: 5px;
+        padding-right: 2px; 
         
         h5{
           font-family: Lato;
@@ -397,6 +399,7 @@ body.home-index {
 
                   text-align: center;
                   margin-top: 15px;
+                  cursor: pointer;
               #add_applicant {
                   font-family: Lato;
                   font-size: 1.2em;
@@ -409,35 +412,51 @@ body.home-index {
 
         }
 
-        .dashboard_column_list {
+        .applicants_container {
 
-          ul {
-            padding: 0px;
+          overflow: scroll;
+          padding-left: 2px; 
+          padding-right: 4px;
+          padding-bottom: 5px;
+          height: 78vh;
 
-            li {
-            list-style: none;
-            }
+          .dashboard_column_list {
 
-          }
-          
-          .applicant_card {
-            height: 60px;
-            width: 100%;
-            background-color: #F5F5F5;
-            box-shadow: 0px 0px 2px #121212;
-            margin-top: 10px;
-            padding: 5px;
+            ul {
+              padding: 0px;
 
-            
-
-            .applicant_card_name {
-              .applicant_name {
-                font-family: Lato; 
-                font-weight: bold;            
+              li {
+              list-style: none;
               }
-            } 
-          }
-        }        
+
+            }
+            
+            .applicant_card {
+              height: 60px;
+              width: 100%;
+              background-color: #F5F5F5;
+              box-shadow: 0px 0px 2px #121212;
+              margin-top: 10px;
+              padding: 5px;
+
+              
+
+              .applicant_card_name {
+                .applicant_name {
+                  font-family: Lato; 
+                  font-weight: bold;            
+                }
+              } 
+            }
+          }          
+        }                
+      }
+
+      #job_dashboard_column1 {
+
+        .applicants_container {
+          height: 71vh;
+        }
       }
     }    
   }
@@ -557,6 +576,7 @@ body.home-index {
             display: inline;
             width: 90%;
             float: right;
+            margin-bottom: 10px;
 
           }
           .comment_created_time {
@@ -564,6 +584,7 @@ body.home-index {
             font-size: 0.8em;
             font-family: Lato;
             color: grey;
+            clear: both;
           }
         }
       }
