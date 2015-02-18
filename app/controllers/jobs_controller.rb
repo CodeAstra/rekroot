@@ -56,8 +56,6 @@ class JobsController < ApplicationController
     render nothing: true
   end
 
-
- 
   private
 
   def job_params

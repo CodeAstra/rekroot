@@ -14,7 +14,7 @@
 #  current_sign_in_ip     :string
 #  last_sign_in_ip        :string
 #  confirmation_token     :string
-#  confirmed_at           :datetime
+#  rconfirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
 #  created_at             :datetime
@@ -26,7 +26,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
   
@@ -59,5 +59,10 @@ class User < ActiveRecord::Base
     return role == Role::APPLICANT
   end
 
+  def accept_invitation
+    super
+    self.company = self.invited_by.company
+    
+  end
 
 end

@@ -75,9 +75,15 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+
+    devise_invitable (1.4.0)
+      actionmailer (>= 3.2.6, < 5)
+      devise (>= 3.2.0)
+
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
+
     erubis (2.7.0)
     eventmachine (1.0.4)
     execjs (2.2.2)
@@ -236,16 +242,16 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  devise_invitable
   font-awesome-sass
   guard
   guard-annotate
   guard-livereload
   jbuilder (~> 2.0)
   jquery-rails
-<<<<<<< HEAD
+
   jquery-ui-rails
-=======
->>>>>>> origin/develop
+
   letter_opener
   rails (= 4.2.0)
   sass-rails (~> 5.0)

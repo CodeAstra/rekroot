@@ -313,11 +313,14 @@ body.home-index {
     font-weight: bold;
   }
 
-  #header_sign_out {
+  #header_links {
+    margin-top : 8px;
     font-size: 1.1em;
     font-family: Lato;
-    padding-right: 0px;
+
+    padding: 5px 10px 0px 10px;
     margin-right: 5px;
+
 
   }
 }
@@ -443,8 +446,70 @@ body.home-index {
   }
 }
 
+/*all users page & invitations page- css*/
 
-// Applicant Modal
+#all_users_page {
+  /*margin-top: 50px;*/
+  min-height: 100vh;
+  height: 100%;
+  background-color: #C7D0CE; 
+
+  #users_container {
+    width: 80%;
+
+    #users_div {
+      margin-top: 80px;
+      height: 100%;
+      
+      .user_card_div {
+        padding: 10px;
+
+        .user_invite_card{
+          background-color: #272727;
+        }
+          #remove_user{
+            float: right;
+            font-size: 30px;
+          }
+          #invite_user_link {
+            text-decoration: none;          
+
+            #invite_user {
+              margin: auto;
+              font-family: Lato;
+              font-size: 1.6em;
+              color: #B0A97B;
+              text-align: center;
+              margin-top: 45px;
+              cursor: pointer;
+
+              &:hover {
+                color: white;
+              }
+
+              #plus {
+                margin-right: 5px;
+              }
+            }
+          }
+        .user_card, .user_invite_card {
+        height: 140px;
+        padding: 5px;
+        max-width: 250px;
+        -webkit-box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
+        -moz-box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
+        box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
+        margin-left: auto;
+        margin-right: auto;
+        }
+        .user_card{
+          background-color: #576E7C;
+          a{
+            color: rgb(218, 210, 210);
+          }
+          a:hover{
+            color: #2E2F30;
+          }
 
 #modal-dialog {
 
@@ -480,6 +545,40 @@ body.home-index {
       .delete_applicant {
         display: inline;
 
+          .user_card_details{
+            margin-top: 42px;
+            clear: both;
+            text-align: center;
+            color: white;
+            .user_card_name{
+              font-size: 16px;
+              font-weight:bold;
+              font-style: oblique;
+            }
+          }
+          &:hover {
+            box-shadow: 0px 0px 3px #000; 
+          } 
+        }
+      }
+    }
+  }
+}
+
+
+/*Modal styling*/
+#invite_colleagues_modal_dialog {
+  width: 480px;
+  #invite_colleagues_modal_content {
+  background-color: #B9C8C5;
+    h4{
+      font-size: 24px;
+    }  
+  }
+}
+/*Remove job modal styling*/
+#remove_job_modal_dialog {
+  width: 285px;
 
         #delete_applicant_button {
           display: inline;

@@ -1,0 +1,46 @@
+<div class="container-fluid" id ="all_users_page">
+  <div class="container" id="users_container">
+    <div class="row" id ="users_div">
+      <div class="col-md-3 user_card_div">    
+        <div class="user_invite_card">
+          <div id="invite_user_link">
+          <p id="invite_user" data-toggle="modal" data-target="#invite_colleagues_myModal" ><i class="fa fa-plus-square-o" id = "plus"></i>Invite colleagues</p>
+          </div>
+        </div>
+      </div>
+      <% @users.each do |user| %>
+        <div class="col-md-3 user_card_div">
+          <div class="user_card">
+            <% if user.invited_by_id != nil %>
+            <%= link_to company_user_path(current_company ,user), method: :delete do %>
+            <p id="remove_user"><i class="fa fa-times-circle-o"></i></p>
+            <% end %>
+            <% end %>
+            <div class="user_card_details">
+              <p class="user_card_name"><%= user.name.capitalize %></p>
+              <p class="user_card_email"><%= user.email %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="invite_colleagues_myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" id="invite_colleagues_modal_dialog">
+    <div class="modal-content" id="invite_colleagues_modal_content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Invite colleagues</h4>
+      </div>
+      <div class="modal-body">
+        <div>
+        <%= render "devise/invitations/new" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,18 @@
     <div class="applicant_card_name">
       <p class="applicant_name"><%= applicant.name %></p>
     </div>
+  </div>                
+</li>
+
+
+<div class="modal fade" id="applicant_details_<%= applicant.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= applicant.name %></h4>
+      </div> 
+    </div>
   </div>
   <%= link_to "Show_details", company_job_applicant_path(@company, @job, applicant), id: "show_applicant_details_#{applicant.id}", class: "hidden", remote: true %>                
 </div>
