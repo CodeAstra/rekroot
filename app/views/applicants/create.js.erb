@@ -4,6 +4,9 @@
   $('#applicant_form')[0].reset();
   $('#applicant_form')[2].reset();
   bindCardsToDetails();
+
+<% else %>
+  <%= render 'applicants/new' %>
 <% end %>
 
 

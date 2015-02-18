@@ -11,18 +11,17 @@ class JobsController < ApplicationController
   def create
     @job=current_user.company.jobs.new(job_params)
     @job_save_success = @job.save
-    # @job.update_attribute(:company_id, @company.id)
     
   end
 
   def show     
     @all_applicants  = @job.applicants.sort_by(&:position)
 
-    @applicants_applied  = @all_applicants.select{|app| app.status == 1}
-    @applicants_shortlisted  = @all_applicants.select{|app| app.status == 2}
-    @applicants_screening  = @all_applicants.select{|app| app.status == 3}
-    @applicants_prehire  = @all_applicants.select{|app| app.status == 4}
-    @applicants_offered  = @all_applicants.select{|app| app.status == 5}
+    @applicants_applied  = @all_applicants.select{|app| app.status == Applicant::Status::APPLIED}
+    @applicants_shortlisted  = @all_applicants.select{|app| app.status == Applicant::Status::SHORTLISTED}
+    @applicants_screening  = @all_applicants.select{|app| app.status == Applicant::Status::SCREENING}
+    @applicants_prehire  = @all_applicants.select{|app| app.status == Applicant::Status::PREHIRE}
+    @applicants_offered  = @all_applicants.select{|app| app.status == Applicant::Status::OFFERED}
 
     @applicants_applied_count = @applicants_applied.count
     @applicants_shortlisted_count = @applicants_shortlisted.count
