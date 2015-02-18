@@ -6,8 +6,6 @@ Rails.application.routes.draw do
 
     resources :jobs do 
       resources :applicants do
-      end 
-    end     
         resources :comments do
         end
       end
