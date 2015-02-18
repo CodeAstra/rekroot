@@ -91,12 +91,12 @@
       </div>  
 
 
-      <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_5">
+      <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_7">
         <div class="job_dashboard_column">
-          <h5> Rejected : <%= @applicants_offered_count %></h5>
+          <h5> Rejected : <%= @applicants_rejected_count %></h5>
           <div class="applicants_container">
-            <div id="offered_applicants" class="dashboard_column_list">            
-              <% @applicants_offered.each do |applicant| %>
+            <div id="rejected_applicants" class="dashboard_column_list">            
+              <% @applicants_rejected.each do |applicant| %>
                 <%= render partial: 'applicants/applicant', locals: {applicant: applicant} %>
               <% end %>            
             </div>

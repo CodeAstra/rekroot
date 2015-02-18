@@ -22,12 +22,14 @@ class JobsController < ApplicationController
     @applicants_screening  = @all_applicants.select{|app| app.status == Applicant::Status::SCREENING}
     @applicants_prehire  = @all_applicants.select{|app| app.status == Applicant::Status::PREHIRE}
     @applicants_offered  = @all_applicants.select{|app| app.status == Applicant::Status::OFFERED}
+    @applicants_rejected = @all_applicants.select{|app| app.status == Applicant::Status::REJECTED}
 
     @applicants_applied_count = @applicants_applied.count
     @applicants_shortlisted_count = @applicants_shortlisted.count
     @applicants_screening_count = @applicants_screening.count
     @applicants_prehire_count = @applicants_prehire.count
     @applicants_offered_count = @applicants_offered.count
+    @applicants_rejected_count = @applicants_rejected.count
 
     @new_applicant = Applicant.new
   end 
