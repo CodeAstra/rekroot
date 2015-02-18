@@ -17,8 +17,8 @@
     cards[<%= Applicant::Status::SCREENING %>] = Sorter.serializeCardsInColumn('#screening_applicants .applicant')
     cards[<%= Applicant::Status::PREHIRE %>] = Sorter.serializeCardsInColumn('#prehire_applicants .applicant')
     cards[<%= Applicant::Status::OFFERED %>] = Sorter.serializeCardsInColumn('#offered_applicants .applicant')
+    cards[<%= Applicant::Status::REJECTED %>] = Sorter.serializeCardsInColumn('#rejected_applicants .applicant')
     cards
-
   serializeCardsInColumn: (cards_selector) ->
     card_ids = []
     for applicant in $(cards_selector)
