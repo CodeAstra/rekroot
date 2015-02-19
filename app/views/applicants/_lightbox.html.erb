@@ -3,22 +3,25 @@
       <div class="modal-content" id="applicant_modal">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel applicant_modal_name"><%= applicant.name %></h4>  <br>  
-          <h6 class="modal-title" id="myModalLabel applicant_modal_name"><%= applicant.email %></h6>        
-          <div class="delete_applicant">
-          <%= link_to "Delete", company_job_applicant_path(@company, @job, applicant), method: :delete, class: "btn btn-danger pull-right", id: "delete_applicant_button" %>
+          <div>
+            <h4 class="modal-title" id="myModalLabel applicant_modal_name"><%= applicant.name %></h4>  <br>  
+            <h6 class="modal-title" id="myModalLabel applicant_modal_name"><%= applicant.email %></h6>  
           </div>
-        </div>
 
-        <div class="status">        
+          <div class="delete_applicant">
+            <%= link_to "Delete", company_job_applicant_path(@company, @job, applicant), method: :delete, class: "btn btn-danger pull-right", id: "delete_applicant_button" %>
+          </div>
+
+          <div class="status">        
+            <span class= " status_buttons", id= "status_<%= Applicant::Status::APPLIED %>">Applied   </span>
+            <span class= " status_buttons", id= "status_<%= Applicant::Status::SHORTLISTED %>"> Shortlisted   </span>
+            <span class= " status_buttons", id= "status_<%= Applicant::Status::SCREENING %>" > Being Screened  </span>
+            <span class= " status_buttons", id= "status_<%= Applicant::Status::PREHIRE %>"> "Pre-hire Shotlisted"   </span>
+            <span class= " status_buttons", id= "status_<%= Applicant::Status::OFFERED %>" > Offered  </span>
+            <span class= " status_buttons", id= "status_<%= Applicant::Status::REJECTED %>"  > Rejected    </span>     
+          </div> 
+
           
-          <%= link_to "Applied", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::APPLIED), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_applied"  %>
-          <%= link_to "Shortlisted", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::SHORTLISTED), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_shortlisted"  %>
-          <%= link_to "Screening", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::SCREENING), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_screening"  %>
-          <%= link_to "Pre-hire Shotlist", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::PREHIRE), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_prehire"  %>
-          <%= link_to "Offered", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::OFFERED), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_offered"  %>
-          <%= link_to "Rejected", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::REJECTED), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_rejected"  %>          
-
         </div>
 
         <div class="modal-comment">

@@ -478,7 +478,28 @@ body.home-index {
 
       padding-left: 0px;
       padding-right: 0px;
+      padding-bottom: 7px;
 
+      .status {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        .status_buttons {
+          padding: 1px 5px;
+          font-size: 0.8em;
+          visibility: hidden;
+
+        }
+        .highlight {
+          background-color: orange;
+          font-weight: bold;
+          font-size: 1.2em;
+          color: #000;
+          visibility: visible;
+          float: left;
+          border-radius: 3px;
+
+        }
+      }
       h4 {
         display: inline;
         font-family: Lato;
@@ -505,27 +526,14 @@ body.home-index {
           margin-right: 10px;
           font-size: 0.95em;
           position: relative;
-          top: -20px;
+          top: 15px;
           right: 10px;
         }
       }
     }
+    
 
-    .status {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      .status_buttons {
-        padding: 1px 5px;
-        font-size: 0.8em;
-
-      }
-
-      .current_status {
-        font-size: 1em;
-        background-color: orange; 
-        font-weight: bold;
-      }
-    }
+    
     .modal-comment {
 
       border-top: 1px solid #d2d2d2;

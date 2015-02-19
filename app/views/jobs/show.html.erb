@@ -10,7 +10,7 @@
     <div class="row" id="job_dashboard_column_container">      
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_1">
         <div class="job_dashboard_column" id = "job_dashboard_column1">
-          <h5> Applied : <%= @applicants_applied_count %></h5>
+          <h5> Applied : <span id="applicants_count_<%= Applicant::Status::APPLIED %>"><%= @applicants_applied_count %></span></h5>
           <div class="applicant_card">            
             <%= render partial: 'applicants/new', locals: {job: @job, company: @company, applicant: @new_applicant} %>            
           </div>
@@ -30,7 +30,7 @@
 
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_2">
         <div class="job_dashboard_column">
-          <h5> Shortlisted : <%= @applicants_shortlisted_count %></h5>
+          <h5> Shortlisted : <span id="applicants_count_<%= Applicant::Status::SHORTLISTED %>"><%= @applicants_shortlisted_count %></span></h5>
           <div class="applicants_container">
             <div id="shortlisted_applicants" class="dashboard_column_list">            
                 <% @applicants_shortlisted.each do |applicant| %>
@@ -46,7 +46,7 @@
 
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_3">
         <div class="job_dashboard_column">
-          <h5> Screening : <%= @applicants_screening_count %></h5>
+          <h5> Screening : <span id="applicants_count_<%= Applicant::Status::SCREENING %>"><%= @applicants_screening_count %></span></h5>
           <div class="applicants_container">
             <div id="screening_applicants" class="dashboard_column_list">            
                 <% @applicants_screening.each do |applicant| %>
@@ -62,7 +62,7 @@
 
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_4">
         <div class="job_dashboard_column">
-          <h5> Pre-hire shortlist : <%= @applicants_prehire_count %></h5>
+          <h5> Pre-hire shortlist : <span id="applicants_count_<%= Applicant::Status::PREHIRE %>"><%= @applicants_prehire_count %></span></h5>
           <div class="applicants_container">
             <div id="prehire_applicants" class="dashboard_column_list">            
               <% @applicants_prehire.each do |applicant| %>
@@ -77,7 +77,7 @@
 
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_5">
         <div class="job_dashboard_column">
-          <h5> Offered : <%= @applicants_offered_count %></h5>
+          <h5> Offered : <span id="applicants_count_<%= Applicant::Status::OFFERED %>"><%= @applicants_offered_count %></span></h5>
           <div class="applicants_container">
             <div id="offered_applicants" class="dashboard_column_list">            
               <% @applicants_offered.each do |applicant| %>
@@ -90,7 +90,7 @@
 
       <div class="col-md-2 job_dashboard_column_holder" id="job_dashboard_column_7">
         <div class="job_dashboard_column">
-          <h5> Rejected : <%= @applicants_rejected_count %></h5>
+          <h5> Rejected : <span id="applicants_count_<%= Applicant::Status::REJECTED %>"><%= @applicants_rejected_count %></span></h5>
           <div class="applicants_container">
             <div id="rejected_applicants" class="dashboard_column_list">            
               <% @applicants_rejected.each do |applicant| %>

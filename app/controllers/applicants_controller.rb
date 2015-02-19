@@ -28,7 +28,6 @@ class ApplicantsController < ApplicationController
   def update 
     @applicant = Applicant.find(params[:id])
     @applicant.update_attributes(status_params)  
-    redirect_to :back
   end 
 
 
