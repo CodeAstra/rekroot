@@ -12,12 +12,12 @@
 
         <div class="status">        
           
-          <%= link_to "Applied", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::APPLIED), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_applied"  %>
-          <%= link_to "Shortlisted", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::SHORTLISTED), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_shortlisted"  %>
-          <%= link_to "Screening", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::SCREENING), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_screening"  %>
-          <%= link_to "Pre-hire Shotlist", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::PREHIRE), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_prehire"  %>
-          <%= link_to "Offered", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::OFFERED), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_offered"  %>
-          <%= link_to "Rejected", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::REJECTED), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_rejected"  %>          
+          <%= link_to "Applied", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::APPLIED), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_#{Applicant::Status::APPLIED}"  %>
+          <%= link_to "Shortlisted", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::SHORTLISTED), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_#{Applicant::Status::SHORTLISTED}"  %>
+          <%= link_to "Screening", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::SCREENING), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_#{Applicant::Status::SCREENING}"  %>
+          <%= link_to "Pre-hire Shotlist", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::PREHIRE), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_#{Applicant::Status::PREHIRE}"  %>
+          <%= link_to "Offered", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::OFFERED), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_#{Applicant::Status::OFFERED}"  %>
+          <%= link_to "Rejected", company_job_applicant_path(@company, @job, applicant, "applicant[status]" => Applicant::Status::REJECTED), method: :put, remote: true, class: "btn btn-default status_buttons", id: "status_#{Applicant::Status::REJECTED}"  %>          
 
         </div>
 

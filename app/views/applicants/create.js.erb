@@ -1,10 +1,18 @@
 <% if @save_success %>
+
+
   $('#new_applicant_myModal').modal('hide');
   $('#applied_applicants').append('<%= j render(@applicant) %>');
-  $('#applicant_form')[0].reset();
-  $('#applicant_form')[2].reset();
+  // $('#applicant_form')[0].reset();
+  // $('#applicant_form')[2].reset();
+ 
+
   bindCardsToDetails();
 
+  // var id = ""
+  // id = $("#applied_applicants div:last-child").attr("id").split("_")[1]
+  
+ 
 <% else %>
   <%= render 'applicants/new' %>
 <% end %>

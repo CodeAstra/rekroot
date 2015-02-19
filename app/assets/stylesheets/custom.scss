@@ -520,11 +520,18 @@ body.home-index {
 
       }
 
-      .current_status {
-        font-size: 1em;
-        background-color: orange; 
+      .highlight {
+        background-color: orange;
         font-weight: bold;
+        font-size: 1.2em;
+        color: #000;
       }
+
+      // .current_status {
+      //   font-size: 1em;
+      //   background-color: orange; 
+      //   font-weight: bold;
+      // }
     }
     .modal-comment {
 

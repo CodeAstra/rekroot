@@ -1,3 +1,11 @@
 $('#applicant_details_<%= @applicant.id %>').remove();
 $('#applicant_<%= @applicant.id %>').append('<%= j render(partial: "applicants/lightbox", locals: {applicant: @applicant}) %>');
 $('#applicant_details_<%= @applicant.id %>').modal('show');
+$("#applicant_details_<%= @applicant.id %> .status #status_<%= @applicant.status %>").removeClass("btn-default").addClass("highlight");
+
+ // $(document).ready(function(){
+   $('.status_buttons').click(function(){
+    var id = $(this).attr('id').split("_")[1];
+    console.log(id);
+  });
+ // });
