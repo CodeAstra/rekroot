@@ -2,8 +2,9 @@
   
   <div class="container-fluid">
     <div class="row" id ="jobs_div">      
-      <h4 id="job_dashboard_title"><%= @job.title %></h4>     
-      <%= link_to "Remove Job", company_job_path(@company, @job), method: :delete, class: "btn btn-danger pull-right", id: "job_delete_btn", data: {confirm: "Are you sure?"} %>     
+      <h4 id="job_dashboard_title"><%= @job.title %></h4>          
+      <button type="button" class="btn btn-danger pull-right" id="job_delete_btn" data-toggle="modal" data-target="#remove_job_myModal"> Remove job </button>      
+
     </div>
 
 
@@ -103,7 +104,22 @@
 
     </div>  
   </div>  
-</div>  
+</div> 
+
+<div class="modal fade" id="remove_job_myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" id="remove_job_modal_dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
+      </div>
+      <div class="modal-body">
+          <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">cancel</span></button>
+          <%= link_to "OK", company_job_path(current_company, @job), method: :delete, class: "btn btn-danger pull-right" %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script type="text/javascript">
   $(document).ready(function() {
