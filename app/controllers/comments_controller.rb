@@ -8,13 +8,21 @@ class CommentsController < ApplicationController
 
   def create 
     @comment = @applicant.comments.new(comment_params)
+    @user=current_user
     @comment_save = @comment.save    
     @comment.update_attribute(:user_id, current_user.id)
+
     
   end
 
   def show
   end
+
+  def destroy     
+    @comment = @applicant.comments.find(params[:id])
+    @comment.delete
+    # render nothing: true
+  end 
 
 
   private 

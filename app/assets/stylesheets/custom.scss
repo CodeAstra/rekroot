@@ -302,16 +302,24 @@ body.home-index {
   margin-bottom: 0px;
 
   #header_logo_icon {
-    font-size: 1.5em;
+    font-size: 2.5em;
     color: #ff0000;
+    display: inherit;
+    position: relative;
+    top: 18px;
   }
 
   #header_name {
     display: inline;
-    font-size: 1.4em;
+    font-size: 2.4em;
     margin-left: 5px;
     font-family: 'Poiret One';
     font-weight: bold;
+    margin-left: 42px;
+    margin-top: -10px;
+    padding-bottom: 35px;
+    padding-top: 0px;
+    height: 20px;
   }
 
   #header_sign_out {
@@ -420,6 +428,8 @@ body.home-index {
           height: 78vh;
 
           .dashboard_column_list {
+
+            padding-bottom: 70px;
 
             ul {
               padding: 0px;
@@ -592,6 +602,14 @@ body.home-index {
             font-family: Lato;
             color: grey;
             clear: both;
+            width: 20%;
+            margin-right: 0px;
+            display: inline-block;
+          }
+          #delete_comment_button {
+            padding: 1px 3px;
+            display: inline;
+            
           }
         }
       }

@@ -129,6 +129,8 @@ GEM
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
+    local_time (1.0.2)
+      coffee-rails
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     lumberjack (1.0.9)
@@ -248,6 +250,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   letter_opener
+  local_time
   rails (= 4.2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

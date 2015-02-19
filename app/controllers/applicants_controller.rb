@@ -10,6 +10,7 @@ class ApplicantsController < ApplicationController
     @applicant=@job.applicants.new(applicant_params)     
     @save_success = @applicant.save    
     @applicant.update_attributes(position: @last_position+1)
+    @user=current_user
   end 
 
   def index 
@@ -20,6 +21,7 @@ class ApplicantsController < ApplicationController
     @applicant = @job.applicants.find(params[:id])
     @comments = @applicant.comments.reverse_chron.all
     @new_comment = @applicant.comments.new
+    @user = current_user
   end
 
   def edit 

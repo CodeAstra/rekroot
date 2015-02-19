@@ -1,7 +1,8 @@
 
 <div class="comment_div">
-  <p class="comment_commenter"><%= comment.user_id %>:</p>
+  <p class="comment_commenter"><%= @user.name %>:</p>
   <p class="comment_text"><%= comment.comment %></p>
   <br>
-  <p class="comment_created_time"><%= comment.created_at %></p>  
-</div>
+  <p class="comment_created_time"><%= local_time(comment.created_at, '%l:%M%P, %b %e, %Y') %></p>  
+  <%= link_to "Delete",  company_job_applicant_comment_path(@company, @job, @applicant, comment), method: :delete, remote: true, class: "btn btn-danger pull-right", id: "delete_comment_button" %>
+</div>      
