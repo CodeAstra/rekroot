@@ -240,6 +240,19 @@ body.home-index {
           margin-left: auto;
           margin-right: auto;
           cursor: pointer;
+
+          .btn-group {
+            float: right;
+            position: relative;
+            top: -44px;
+            right: -6px;
+            padding: 0px;
+
+            #gear_button {
+              padding: 4px;
+              border: 0px;
+            }
+          }
           
           .job_title {
             font-family: Lato;
