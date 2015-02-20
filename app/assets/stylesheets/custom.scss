@@ -223,11 +223,12 @@ body.home-index {
     width: 80%;
 
     #jobs_div {
-      margin-top: 80px;
+      margin-top: 65px;
       height: 100%;
       
       .job_card_div {
         padding: 10px;
+        z-index: 0;
 
         .job_card {
           height: 140px;
@@ -241,18 +242,19 @@ body.home-index {
           margin-right: auto;
           cursor: pointer;
 
-          .btn-group {
-            float: right;
-            position: relative;
-            top: -44px;
-            right: -6px;
-            padding: 0px;
+          // .btn-group {
+          //   float: right;
+          //   position: relative;
+          //   top: -44px;
+          //   right: -6px;
+          //   padding: 0px;
+          //   z-index: 1;
 
-            #gear_button {
-              padding: 4px;
-              border: 0px;
-            }
-          }
+          //   #gear_button {
+          //     padding: 4px;
+          //     border: 0px;
+          //   }
+          // }
           
           .job_title {
             font-family: Lato;
@@ -350,7 +352,6 @@ body.home-index {
 #job_dashboard_page {
   
   height: 92vh;
-  /*height: 100%;*/
   background-image: url('background2.png'); 
 
   #jobs_div {
@@ -363,10 +364,23 @@ body.home-index {
       text-align: left;
       display: inline;
     }
-    #job_delete_btn {
-      padding: 1px 6px;
-      font-size: 0.95em;   
-      margin-right: 5px;   
+    // #job_delete_btn {
+    //   padding: 1px 6px;
+    //   font-size: 0.95em;   
+    //   margin-right: 5px;   
+    // }
+
+    #job_edit_btn_group {
+      margin-right: 5px;
+      #job_edit_gear_toggle {
+        background: none;
+        border: none;
+        padding: 0px;
+      }
+      .dropdown-menu {
+        min-width: 125px;
+        margin-top: 0px;
+      }
     }
   }
   

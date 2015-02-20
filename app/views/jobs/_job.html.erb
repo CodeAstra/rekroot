@@ -2,16 +2,7 @@
   <%= link_to company_job_path(job.company, job), id: "job_card_clickable" do%>
     <div class="job_card">
       <p class="job_title"><%= job.title %></p>
-      <div class="btn-group">
-        <button type="button" class="btn btn-default dropdown-toggle" id = "gear_button" data-toggle="dropdown" aria-expanded="false">
-           <span class="glyphicon glyphicon-cog"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          
-        </ul>
-      </div>
+      
     </div>
   <% end %>
 </div>
