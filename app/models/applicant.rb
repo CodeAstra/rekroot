@@ -65,10 +65,13 @@ class Applicant < ActiveRecord::Base
   # before_update :create_activity_before
   after_update :create_activity_after
 
-  def create_activity_before
-    Activity.create(applicant_id: self.id, fromstatus: from_status, tostatus: self.status)
+  def create_activity_after
+    Activity.create(applicant_id: self.id, tostatus: self.status) if check_activity_presence? || self.status_changed? 
   end 
 
+  def check_activity_presence? 
+    return true if Activity.where(:applicant_id=> self.id).nil?
+  end 
   # def create_activity_after 
   #   activity.update_attributes(tostatus: self.status)
   # end 

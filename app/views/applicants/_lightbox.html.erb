@@ -24,6 +24,10 @@
           
         </div>
 
+        <div class="all_activities">
+          <%= render @activities %>
+        </div>
+
         <div class="modal-comment">
 
           <%= render partial: "comments/new", locals: {job: @job, company: @company, applicant: applicant, comment: @new_comment} %>
@@ -34,6 +38,9 @@
 
           
         </div>      
+
+        
+        
       </div>
     </div>
   </div>

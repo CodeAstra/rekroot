@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150221120254) do
+ActiveRecord::Schema.define(version: 20150221133417) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "applicant_id"
-    t.integer  "fromstatus",   default: 0
     t.integer  "tostatus",     default: 0
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "fromstatus",   default: 0
   end
 
   add_index "activities", ["applicant_id"], name: "index_activities_on_applicant_id"
