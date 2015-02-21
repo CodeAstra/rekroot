@@ -352,7 +352,8 @@ body.home-index {
 #job_dashboard_page {
   
   height: 92vh;
-  background-image: url('background2.png'); 
+  // background-image: url('background2.png'); 
+  background-color: #a1d4f1;
 
   #jobs_div {
     margin-top: 10px;
@@ -400,14 +401,17 @@ body.home-index {
       .job_dashboard_column {
          /*height: 800px;*/
         height: 84vh;
-        background-color: #ffffff;              
+        // background-color: #ffffff;              
         -webkit-box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
         -moz-box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
         box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
         margin-left: auto;
         margin-right: auto;
         padding: 5px;
-        padding-right: 2px; 
+        padding-right: 5px; 
+        border-radius: 3px;
+        background-color: #F4F4F4;
+        // background-image: url('background2.png');
         
         h5{
           font-family: Lato;
@@ -416,13 +420,15 @@ body.home-index {
         }
 
         .applicant_card {
-            height: 60px;
+            height: 35px;
             width: 100%;
-            background-color: #F5F5F5;
+            // background-color: #F5F5F5;
             box-shadow: 0px 0px 2px #121212;
             margin-top: 10px;
             padding: 5px;
             cursor: pointer;
+            background-color: #FFFFFF;
+            margin-bottom: 15px;
 
             #add_applicant_link {
               text-decoration: none;
@@ -432,7 +438,6 @@ body.home-index {
             .applicant_add {
 
                   text-align: center;
-                  margin-top: 15px;
                   cursor: pointer;
               #add_applicant {
                   font-family: Lato;
@@ -448,11 +453,12 @@ body.home-index {
 
         .applicants_container {
 
-          overflow: scroll;
+          overflow: auto;
           padding-left: 2px; 
           padding-right: 4px;
           padding-bottom: 5px;
           height: 78vh;
+          margin-top: -10px;
 
           .dashboard_column_list {
 
@@ -468,12 +474,15 @@ body.home-index {
             }
             
             .applicant_card {
-              height: 60px;
+              height: 35px;
               width: 100%;
-              background-color: #F5F5F5;
-              box-shadow: 0px 0px 2px #121212;
+              // background-color: #F5F5F5;
+              // box-shadow: 0px 0px 2px #121212;
+              box-shadow: 0px 0px 1px #3D3D3D;
+
               margin-top: 10px;
               padding: 5px;
+              background-color: #FFFFFF;
 
               
 
@@ -588,7 +597,7 @@ body.home-index {
       #all_comments {
 
           height: 400px;
-          overflow: scroll;
+          overflow: auto;
           padding-right: 10px;
           border-top: 1px solid #d2d2d2;
           
