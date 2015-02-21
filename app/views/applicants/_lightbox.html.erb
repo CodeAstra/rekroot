@@ -9,7 +9,7 @@
           </div>
 
           <div class="delete_applicant">
-            <%= link_to "Delete", company_job_applicant_path(@company, @job, applicant), method: :delete, class: "btn btn-danger pull-right", id: "delete_applicant_button" %>
+            <%= link_to "Delete Applicant", company_job_applicant_path(@company, @job, applicant), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger pull-right", id: "delete_applicant_button" %>
           </div>
 
           <div class="status">        

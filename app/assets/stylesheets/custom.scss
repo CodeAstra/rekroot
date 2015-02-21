@@ -645,6 +645,7 @@ body.home-index {
           #delete_comment_button {
             padding: 1px 3px;
             display: inline;
+            font-size: 0.8em;
             
           }
         }
@@ -657,7 +658,7 @@ body.home-index {
   min-height: 100px;
 
   .ui-state-highlight {
-    height: 70px;
+    height: 40px;
     background-color: #b3b3b3;
   }
 }
