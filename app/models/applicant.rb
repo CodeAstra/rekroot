@@ -17,6 +17,8 @@
 #
 
 class Applicant < ActiveRecord::Base
+
+
   module Gender
     MALE = 0
     FEMALE = 1
@@ -55,8 +57,30 @@ class Applicant < ActiveRecord::Base
 
   belongs_to :job
   has_many :comments
+  has_many :activities
   validates :job_id, presence: true
   validates :email, presence: true, format: { with: Devise::email_regexp}
+
+
+  # before_update :create_activity_before
+  after_update :create_activity_after
+
+  def create_activity_before
+    Activity.create(applicant_id: self.id, fromstatus: from_status, tostatus: self.status)
+  end 
+
+  # def create_activity_after 
+  #   activity.update_attributes(tostatus: self.status)
+  # end 
+
+  # def activity 
+  #   return Activity.where(["applicant_id = ? and  tostatus =?", self.id, "0"]).last
+  # end 
+
+  # def from_status 
+  #   return Activity.where(["applicant_id = ?", self.id]).order("id DESC").offset(1).status
+  # end
+
 
   def applied?
     return status == Status::APPLIED 
