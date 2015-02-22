@@ -317,16 +317,17 @@ body.home-index {
   margin-bottom: 0px;
 
   #header_logo_icon {
-    font-size: 2.5em;
+    font-size: 2em;
     color: #ff0000;
     display: inherit;
     position: relative;
-    top: 18px;
+    top: 10px;
+    width: 25px;
   }
 
   #header_name {
     display: inline;
-    font-size: 2.4em;
+    font-size: 2em;
     margin-left: 5px;
     font-family: 'Poiret One';
     font-weight: bold;
@@ -343,6 +344,10 @@ body.home-index {
     padding-right: 0px;
     margin-right: 5px;
 
+  }
+
+  #header_links  {
+    font-family: Lato;
   }
 }
 
@@ -576,8 +581,7 @@ body.home-index {
           right: 10px;
         }
       }
-    }
-    
+    }  
 
     
     .modal-comment {
@@ -654,6 +658,8 @@ body.home-index {
   }
 }
 
+
+
 .dashboard_column_list {
   min-height: 100px;
 
@@ -662,6 +668,8 @@ body.home-index {
     background-color: #b3b3b3;
   }
 }
+
+
 /*all users page & invitations page- css*/
 
 #all_users_page {
@@ -761,3 +769,8 @@ body.home-index {
 /*#remove_job_modal_dialog {
   width: 285px;
 }*/
+
+
+.ui-draggable-handle {
+  z-index: 1;
+} 
