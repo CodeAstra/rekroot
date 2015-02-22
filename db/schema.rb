@@ -11,28 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150221133417) do
+ActiveRecord::Schema.define(version: 20150221113703) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "applicant_id"
+    t.integer  "fromstatus",   default: 0
     t.integer  "tostatus",     default: 0
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.integer  "fromstatus",   default: 0
   end
 
   add_index "activities", ["applicant_id"], name: "index_activities_on_applicant_id"
 
   create_table "answers", force: :cascade do |t|
     t.text     "answer"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "question_id"
-    t.integer  "applicant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "answers", ["applicant_id"], name: "index_answers_on_applicant_id"
-  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
 
   create_table "applicants", force: :cascade do |t|
     t.string   "name"
@@ -79,16 +74,10 @@ ActiveRecord::Schema.define(version: 20150221133417) do
   add_index "jobs", ["company_id"], name: "index_jobs_on_company_id"
 
   create_table "questions", force: :cascade do |t|
-    t.text     "question"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.integer  "question_type", default: 1
-    t.text     "options"
-    t.integer  "job_id"
-    t.boolean  "mandatory",     default: false
+    t.string   "question"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "questions", ["job_id"], name: "index_questions_on_job_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
