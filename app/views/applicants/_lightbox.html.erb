@@ -9,19 +9,23 @@
           </div>
 
           <div class="delete_applicant">
-            <%= link_to "Delete", company_job_applicant_path(@company, @job, applicant), method: :delete, class: "btn btn-danger pull-right", id: "delete_applicant_button" %>
+            <%= link_to "Delete Applicant", company_job_applicant_path(@company, @job, applicant), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger pull-right", id: "delete_applicant_button" %>
           </div>
 
           <div class="status">        
             <span class= " status_buttons", id= "status_<%= Applicant::Status::APPLIED %>">Applied   </span>
             <span class= " status_buttons", id= "status_<%= Applicant::Status::SHORTLISTED %>"> Shortlisted   </span>
             <span class= " status_buttons", id= "status_<%= Applicant::Status::SCREENING %>" > Being Screened  </span>
-            <span class= " status_buttons", id= "status_<%= Applicant::Status::PREHIRE %>"> "Pre-hire Shotlisted"   </span>
+            <span class= " status_buttons", id= "status_<%= Applicant::Status::PREHIRE %>"> Pre-hire Shotlisteds   </span>
             <span class= " status_buttons", id= "status_<%= Applicant::Status::OFFERED %>" > Offered  </span>
             <span class= " status_buttons", id= "status_<%= Applicant::Status::REJECTED %>"  > Rejected    </span>     
           </div> 
 
           
+        </div>
+
+        <div class="all_activities">
+          <%= render @activities %>
         </div>
 
         <div class="modal-comment">
@@ -34,6 +38,9 @@
 
           
         </div>      
+
+        
+        
       </div>
     </div>
   </div>

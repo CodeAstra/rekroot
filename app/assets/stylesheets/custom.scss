@@ -223,11 +223,12 @@ body.home-index {
     width: 80%;
 
     #jobs_div {
-      margin-top: 80px;
+      margin-top: 65px;
       height: 100%;
       
       .job_card_div {
         padding: 10px;
+        z-index: 0;
 
         .job_card {
           height: 140px;
@@ -240,6 +241,20 @@ body.home-index {
           margin-left: auto;
           margin-right: auto;
           cursor: pointer;
+
+          // .btn-group {
+          //   float: right;
+          //   position: relative;
+          //   top: -44px;
+          //   right: -6px;
+          //   padding: 0px;
+          //   z-index: 1;
+
+          //   #gear_button {
+          //     padding: 4px;
+          //     border: 0px;
+          //   }
+          // }
           
           .job_title {
             font-family: Lato;
@@ -302,16 +317,25 @@ body.home-index {
   margin-bottom: 0px;
 
   #header_logo_icon {
-    font-size: 1.5em;
+    font-size: 2em;
     color: #ff0000;
+    display: inherit;
+    position: relative;
+    top: 10px;
+    width: 25px;
   }
 
   #header_name {
     display: inline;
-    font-size: 1.4em;
+    font-size: 2em;
     margin-left: 5px;
     font-family: 'Poiret One';
     font-weight: bold;
+    margin-left: 42px;
+    margin-top: -10px;
+    padding-bottom: 35px;
+    padding-top: 0px;
+    height: 20px;
   }
 
   #header_sign_out {
@@ -321,6 +345,10 @@ body.home-index {
     margin-right: 5px;
 
   }
+
+  #header_links  {
+    font-family: Lato;
+  }
 }
 
 
@@ -329,8 +357,8 @@ body.home-index {
 #job_dashboard_page {
   
   height: 92vh;
-  /*height: 100%;*/
-  background-image: url('background2.png'); 
+  // background-image: url('background2.png'); 
+  background-color: #a1d4f1;
 
   #jobs_div {
     margin-top: 10px;
@@ -342,10 +370,23 @@ body.home-index {
       text-align: left;
       display: inline;
     }
-    #job_delete_btn {
-      padding: 1px 6px;
-      font-size: 0.95em;   
-      margin-right: 5px;   
+    // #job_delete_btn {
+    //   padding: 1px 6px;
+    //   font-size: 0.95em;   
+    //   margin-right: 5px;   
+    // }
+
+    #job_edit_btn_group {
+      margin-right: 5px;
+      #job_edit_gear_toggle {
+        background: none;
+        border: none;
+        padding: 0px;
+      }
+      .dropdown-menu {
+        min-width: 125px;
+        margin-top: 0px;
+      }
     }
   }
   
@@ -365,14 +406,17 @@ body.home-index {
       .job_dashboard_column {
          /*height: 800px;*/
         height: 84vh;
-        background-color: #ffffff;              
+        // background-color: #ffffff;              
         -webkit-box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
         -moz-box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
         box-shadow: 0px 0px 3px 1px rgba(134, 133, 133, 0.5);
         margin-left: auto;
         margin-right: auto;
         padding: 5px;
-        padding-right: 2px; 
+        padding-right: 5px; 
+        border-radius: 3px;
+        background-color: #F4F4F4;
+        // background-image: url('background2.png');
         
         h5{
           font-family: Lato;
@@ -381,13 +425,15 @@ body.home-index {
         }
 
         .applicant_card {
-            height: 60px;
+            height: 35px;
             width: 100%;
-            background-color: #F5F5F5;
+            // background-color: #F5F5F5;
             box-shadow: 0px 0px 2px #121212;
             margin-top: 10px;
             padding: 5px;
             cursor: pointer;
+            background-color: #FFFFFF;
+            margin-bottom: 15px;
 
             #add_applicant_link {
               text-decoration: none;
@@ -397,7 +443,6 @@ body.home-index {
             .applicant_add {
 
                   text-align: center;
-                  margin-top: 15px;
                   cursor: pointer;
               #add_applicant {
                   font-family: Lato;
@@ -413,13 +458,16 @@ body.home-index {
 
         .applicants_container {
 
-          overflow: scroll;
+          overflow: auto;
           padding-left: 2px; 
           padding-right: 4px;
           padding-bottom: 5px;
           height: 78vh;
+          margin-top: -10px;
 
           .dashboard_column_list {
+
+            padding-bottom: 70px;
 
             ul {
               padding: 0px;
@@ -431,12 +479,15 @@ body.home-index {
             }
             
             .applicant_card {
-              height: 60px;
+              height: 35px;
               width: 100%;
-              background-color: #F5F5F5;
-              box-shadow: 0px 0px 2px #121212;
+              // background-color: #F5F5F5;
+              // box-shadow: 0px 0px 2px #121212;
+              box-shadow: 0px 0px 1px #3D3D3D;
+
               margin-top: 10px;
               padding: 5px;
+              background-color: #FFFFFF;
 
               
 
@@ -530,8 +581,7 @@ body.home-index {
           right: 10px;
         }
       }
-    }
-    
+    }  
 
     
     .modal-comment {
@@ -551,7 +601,7 @@ body.home-index {
       #all_comments {
 
           height: 400px;
-          overflow: scroll;
+          overflow: auto;
           padding-right: 10px;
           border-top: 1px solid #d2d2d2;
           
@@ -592,6 +642,15 @@ body.home-index {
             font-family: Lato;
             color: grey;
             clear: both;
+            width: 20%;
+            margin-right: 0px;
+            display: inline-block;
+          }
+          #delete_comment_button {
+            padding: 1px 3px;
+            display: inline;
+            font-size: 0.8em;
+            
           }
         }
       }
@@ -599,14 +658,18 @@ body.home-index {
   }
 }
 
+
+
 .dashboard_column_list {
   min-height: 100px;
 
   .ui-state-highlight {
-    height: 70px;
+    height: 40px;
     background-color: #b3b3b3;
   }
 }
+
+
 /*all users page & invitations page- css*/
 
 #all_users_page {
@@ -706,3 +769,8 @@ body.home-index {
 /*#remove_job_modal_dialog {
   width: 285px;
 }*/
+
+
+.ui-draggable-handle {
+  z-index: 1;
+} 

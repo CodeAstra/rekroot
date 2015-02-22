@@ -41,6 +41,7 @@ class User < ActiveRecord::Base
   
   belongs_to :company
   has_many :comments
+  # has_many :activities
   
   module Role 
     ADMIN = 1 

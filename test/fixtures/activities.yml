@@ -1,0 +1,25 @@
+# == Schema Information
+#
+# Table name: activities
+#
+#  id           :integer          not null, primary key
+#  applicant_id :integer
+#  tostatus     :integer          default("0")
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  fromstatus   :integer          default("0")
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  applicant_id: 
+  fromstatus: 1
+  tostatus: 1
+
+two:
+  user_id: 
+  applicant_id: 
+  fromstatus: 1
+  tostatus: 1
