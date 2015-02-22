@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150221113703) do
+ActiveRecord::Schema.define(version: 20150222155116) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "applicant_id"
@@ -80,12 +80,12 @@ ActiveRecord::Schema.define(version: 20150221113703) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",         null: false
+    t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,          null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -96,9 +96,8 @@ ActiveRecord::Schema.define(version: 20150221113703) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "role",                   default: 2
     t.integer  "company_id"
-    t.string   "name",                   default: "Nonamion"
+    t.string   "name"
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"

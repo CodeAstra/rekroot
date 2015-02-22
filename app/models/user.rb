@@ -19,7 +19,6 @@
 #  unconfirmed_email      :string
 #  created_at             :datetime
 #  updated_at             :datetime
-#  role                   :integer          default("2")
 #  company_id             :integer
 #  name                   :string
 #  invitation_token       :string
@@ -43,32 +42,6 @@ class User < ActiveRecord::Base
   has_many :comments
   # has_many :activities
   
-  module Role 
-    ADMIN = 1 
-    EMPLOYER  = 2
-    APPLICANT = 3
-
-    def self.all
-      [ADMIN, EMPLOYER, APPLICANT]
-    end
-  end
-
-  validates :role, presence: true, 
-            numericality: { only_integer: true }, inclusion: { in: Role.all}
-
-  def admin?
-    return role == Role::ADMIN 
-  end 
-
-  def employer?
-    return role == Role::EMPLOYER
-  end
-
-
-  def applicant?
-    return role == Role::APPLICANT
-  end
-
   def accept_invitation
     super
     self.company = self.invited_by.company
