@@ -11,7 +11,11 @@
       
         <i class="fa fa-skyatlas fa-4x" id ="header_logo_icon"></i><!-- 
         <p id="header_name">REKROOT</p> -->
-        <%= link_to "REKROOT", company_jobs_path(current_company), class: "navbar-brand", id: "header_name" %>
+        <% if current_user.company.nil? %>
+          <%= link_to "REKROOT", "#", class: "navbar-brand", id: "header_name" %>
+        <% else %>
+          <%= link_to "REKROOT", company_jobs_path(current_company), class: "navbar-brand", id: "header_name" %>
+        <% end %>
       
 
      
