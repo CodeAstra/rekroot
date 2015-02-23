@@ -2,12 +2,10 @@
 #
 # Table name: answers
 #
-#  id           :integer          not null, primary key
-#  answer       :text
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  question_id  :integer
-#  applicant_id :integer
+#  id         :integer          not null, primary key
+#  answer     :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
 class Answer < ActiveRecord::Base

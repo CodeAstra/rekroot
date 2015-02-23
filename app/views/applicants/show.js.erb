@@ -1,5 +1,5 @@
 $('#applicant_details_<%= @applicant.id %>').remove();
-$('#applicant_<%= @applicant.id %>').append('<%= j render(partial: "applicants/lightbox", locals: {applicant: @applicant}) %>');
+$('#applicant_<%= @applicant.id %>').append('<%= j render(partial: "applicants/lightbox", locals: {applicant: @applicant, applicantfile: @applicantfile}) %>');
 $('#applicant_details_<%= @applicant.id %>').modal('show');
 $("#applicant_details_<%= @applicant.id %> .status #status_<%= @applicant.status %>").addClass("highlight");
 

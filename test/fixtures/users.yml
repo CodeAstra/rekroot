@@ -21,7 +21,7 @@
 #  updated_at             :datetime
 #  role                   :integer          default("2")
 #  company_id             :integer
-#  name                   :string
+#  name                   :string           default("Nonamion")
 #  invitation_token       :string
 #  invitation_created_at  :datetime
 #  invitation_sent_at     :datetime

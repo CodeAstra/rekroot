@@ -24,6 +24,21 @@
           
         </div>
 
+        <div class="applicant_files">
+          <%= simple_form_for [@company, @job, applicant, applicantfile], html: {multipart: true}, remote: true do |f| %>
+            <div class="field input-group">
+              <%= f.input :file, as: :file %>
+              <%= f.input :applicant_id, as: :hidden %>
+              <%= token_tag form_authenticity_token %>
+              <%= f.button :submit, "Add file", class: "btn btn-primary", id: "create_job_btn" %>
+            </div>
+          <% end %>
+
+          <div id="all_files">
+            <%= render @applicantfiles %>
+          </div>
+        </div>
+
         <div class="all_activities">
           <%= render @activities %>
         </div>

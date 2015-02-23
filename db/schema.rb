@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150221113703) do
+ActiveRecord::Schema.define(version: 20150223074611) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "applicant_id"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20150221113703) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "applicantfiles", force: :cascade do |t|
+    t.string   "file"
+    t.integer  "applicant_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "applicantfiles", ["applicant_id"], name: "index_applicantfiles_on_applicant_id"
+  add_index "applicantfiles", ["user_id"], name: "index_applicantfiles_on_user_id"
 
   create_table "applicants", force: :cascade do |t|
     t.string   "name"
