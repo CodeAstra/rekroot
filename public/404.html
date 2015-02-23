@@ -3,6 +3,7 @@
 <head>
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
   <style>
   body {
     background-color: #EFEFEF;
@@ -12,7 +13,7 @@
     margin: 0;
   }
 
-  div.dialog {
+  /*div.dialog {
     width: 95%;
     max-width: 33em;
     margin: 4em auto 0;
@@ -50,18 +51,59 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  }*/
+
+    .row {
+      position: relative;
+      top: 35%;
+      35vh;
+    }
+
+    .404_box {
+      height: 30vh; 
+      padding: 5px;
+    }
+
+    .404_container {
+      height: 28vh;
+    }
+
+    #icon_404 {
+      font-size: 12em;
+      font-family: Lato;
+      color: #b1b1b1;
+      text-shadow: 0px 0px 2px rgba(150,150,150, 0.6);
+      margin-bottom: 25px;
+    }
+
+    #text_404 {
+      font-size: 1.2em;
+      font-family: Lato;
+    }
+
   </style>
 </head>
 
 <body>
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
+  <!-- <div class="dialog">
     <div>
       <h1>The page you were looking for doesn't exist.</h1>
       <p>You may have mistyped the address or the page may have moved.</p>
     </div>
     <p>If you are the application owner check the logs for more information.</p>
+  </div> -->
+
+  <div class="container">
+    <div class="row">
+      <div class="404_box col-sm-4 col-sm-offset-4">
+        <div class="404_container">
+          <p id="icon_404">404</p>
+          <p id="text_404">Sorry, you've either typed a link to a page that doesn't exist or something went wrong in the Universe!</p>
+        </div>
+      </div>
+    </div>
   </div>
+
 </body>
 </html>
