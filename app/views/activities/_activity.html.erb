@@ -1,22 +1,3 @@
-<% def function(arg) %>
-  <% case arg %>
-    <% when 1 %>
-      <% return "Applied" %>
-    <% when 2 %>
-      <% return "Shortlisted" %>
-    <% when 3 %>
-      <% return "Screening" %>
-    <% when 4 %>
-      <% return "Pre-hire Shortlist" %>
-    <% when 5 %>
-      <% return "Offered" %>
-    <% when 7 %>
-      <% return "Rejected" %>
-  <% end %>
-<% end %>
-
-
-
 <% if activity.fromstatus == 0 %>
   <p>Card was created at <span style= "font-weight:bold; font-style:italic">  <%= local_time(activity.created_at, '%l:%M%P, %b %e, %Y') %> </span></p>
 <% else %>

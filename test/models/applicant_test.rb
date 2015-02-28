@@ -8,7 +8,6 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  dob        :date
-#  gender     :integer
 #  phone      :string
 #  job_id     :integer
 #  confirm    :boolean          default("f")
