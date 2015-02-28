@@ -583,10 +583,36 @@ body.home-index {
       }
     }  
 
-    
+    .applicant_files {
+      border-bottom: 1px solid #e5e5e5;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      // form {
+      //   .applicantfile_file {
+      //     visibility: hidden;
+      //   }
+      // }
+      #all_files {
+
+        .applicant_file_boxes {
+          margin-bottom: 10px;
+          font-family: Lato;          
+          p {
+            display: inline;
+          }
+        }
+      }
+    }
+
+    .all_activities {
+      border-bottom: 1px solid #e5e5e5;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
     .modal-comment {
 
-      border-top: 1px solid #d2d2d2;
+      border-top: 1px solid #e5e5e5;
 
       #comment_entry_div {
         margin-top: 10px;

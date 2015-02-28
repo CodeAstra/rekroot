@@ -2,5 +2,7 @@ $('#applicant_details_<%= @applicant.id %>').remove();
 $('#applicant_<%= @applicant.id %>').append('<%= j render(partial: "applicants/lightbox", locals: {applicant: @applicant, applicantfile: @applicantfile}) %>');
 $('#applicant_details_<%= @applicant.id %>').modal('show');
 $("#applicant_details_<%= @applicant.id %> .status #status_<%= @applicant.status %>").addClass("highlight");
+$("#applicant_details_<%= @applicant.id %> .applicant_files #add_file").click(function(){
+  $(this).parent().find("#applicantfile_file").click();
 
-
+});

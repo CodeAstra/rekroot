@@ -16,4 +16,5 @@ class ApplicantfileTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+  validated :file, presence: true
 end
