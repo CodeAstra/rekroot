@@ -521,8 +521,8 @@ body.home-index {
   width: 700px; 
 
   #applicant_modal {
-    min-height: 200px;
-    max-height: 800px; 
+    min-height: 90vh;
+    max-height: 125vh; 
     padding-left: 15px;
     padding-right: 15px;   
 
@@ -584,7 +584,11 @@ body.home-index {
       }
     }  
 
-    
+    .all_activities {
+      max-height: 14vh;
+      overflow: auto;
+      font-family: Lato;
+    }
     .modal-comment {
 
       border-top: 1px solid #d2d2d2;
@@ -601,7 +605,7 @@ body.home-index {
 
       #all_comments {
 
-          height: 400px;
+          height: 34vh;
           overflow: auto;
           padding-right: 10px;
           border-top: 1px solid #d2d2d2;
