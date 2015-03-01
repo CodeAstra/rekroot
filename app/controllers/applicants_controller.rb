@@ -1,7 +1,12 @@
 class ApplicantsController < ApplicationController
   before_action :fetch_company, :fetch_job
   before_action :fetch_last_positon, only: [:create]
+  before_filter :set_current_user
 
+  def set_current_user
+    User.current = current_user
+  end
+  
   def new
     @applicant = @job.applicants.new
   end
