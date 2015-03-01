@@ -11,7 +11,6 @@ class ApplicantsController < ApplicationController
     @save_success = @applicant.save    
     @applicant.update_attributes(position: @last_position+1)
     @user=current_user
-    Activity.create(applicant_id: @applicant.id, tostatus: @applicant.status)
   end 
 
   def index 

@@ -20,8 +20,7 @@ class CommentsController < ApplicationController
 
   def destroy     
     @comment = @applicant.comments.find(params[:id])
-    @comment.delete
-    # render nothing: true
+    @comment.destroy
   end 
 
 
@@ -42,6 +41,5 @@ class CommentsController < ApplicationController
     def comment_params
       params.require(:comment).permit(:comment)
     end
-
 
 end
