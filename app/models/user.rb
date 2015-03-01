@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
          :confirmable
   
   belongs_to :company
-  has_many :comments
+  has_many :comment
   # has_many :activities
   
   def accept_invitation

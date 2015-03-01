@@ -4,8 +4,8 @@
   $('#new_applicant_myModal').modal('hide');
   $('#applied_applicants').append('<%= j render(@applicant) %>');
   $('#applicant_details_<%= @applicant.id %>').modal();
-  // $('#applicant_form')[0].reset();
-  // $('#applicant_form')[2].reset();
+  $('#applicant_form')[0].reset();
+  $('#applicant_form')[2].reset();
  
 
   bindCardsToDetails();
