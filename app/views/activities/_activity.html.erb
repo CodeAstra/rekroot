@@ -1,5 +1,5 @@
 <% if activity.fromstatus == 0 %>
-  <p>Card was created at <span style= "font-weight:bold; font-style:italic">  <%= local_time(activity.created_at, '%l:%M%P, %b %e, %Y') %> </span></p>
+  <p>Card was created at <span style= "font-weight:bold; font-style:italic">  <%= local_time(activity.created_at, '%l:%M%P, %b %e, %Y') %> </span> by <span style= "font-weight:bold; font-style:italic; font-size:17px"><%= activity.user.name.capitalize%> </p>
 <% else %>
-  <p>This card was moved from <span style= "font-weight:bold; font-style:italic">  <%= function(activity.fromstatus) %> </span> to <span style= "font-weight:bold; font-style:italic"> <%= function(activity.tostatus) %> </span> </p>
+<p>This card was moved from <span style= "font-weight:bold; font-style:italic">  <%= status_activity(activity.fromstatus) %> </span> to <span style= "font-weight:bold; font-style:italic"> <%= status_activity(activity.tostatus) %> </span> by <span style= "font-weight:bold; font-style:italic; font-size:17px"><%= activity.user.name.capitalize%></span> </p>
 <% end %>

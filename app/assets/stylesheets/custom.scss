@@ -228,7 +228,6 @@ body.home-index {
       
       .job_card_div {
         padding: 10px;
-        z-index: 0;
 
         .job_card {
           height: 140px;
@@ -242,19 +241,19 @@ body.home-index {
           margin-right: auto;
           cursor: pointer;
 
-          // .btn-group {
-          //   float: right;
-          //   position: relative;
-          //   top: -44px;
-          //   right: -6px;
-          //   padding: 0px;
-          //   z-index: 1;
+           .btn-group {
+             float: right;
+             position: relative;
+             top: -44px;
+             right: -6px;
+             padding: 0px;
+        
 
-          //   #gear_button {
-          //     padding: 4px;
-          //     border: 0px;
-          //   }
-          // }
+             #gear_button {
+               padding: 4px;
+               border: 0px;
+             }
+           }
           
           .job_title {
             font-family: Lato;
@@ -766,10 +765,7 @@ body.home-index {
     }  
   }
 }
-
-.ui-draggable-handle {
-  z-index: 1;
-} 
+ 
 
 /*Profile settings styling*/
 #user_settings{

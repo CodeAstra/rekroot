@@ -39,13 +39,21 @@ class User < ActiveRecord::Base
          :confirmable
   
   belongs_to :company
-  has_many :comments
-  # has_many :activities
+  has_many :comments 
+  has_many :activities
   
   def accept_invitation
     super
     self.company = self.invited_by.company
     
+  end
+
+  def self.current=(user)
+    Thread.current[:current_user] = user
+  end
+
+  def self.current
+    Thread.current[:current_user]
   end
 
 end
