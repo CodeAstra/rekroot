@@ -12,8 +12,8 @@
 
 class Comment < ActiveRecord::Base
 
-  belongs_to :applicants
-  belongs_to :users
+  belongs_to :applicant
+  belongs_to :user
   scope :reverse_chron, -> {order('created_at DESC')}
   
 end

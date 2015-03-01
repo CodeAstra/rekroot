@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   resources :companies do 
     resources :users do 
     end 
