@@ -228,7 +228,7 @@ body.home-index {
       
       .job_card_div {
         padding: 10px;
-        z-index: 0;
+       
 
         .job_card {
           height: 140px;
@@ -248,7 +248,7 @@ body.home-index {
           //   top: -44px;
           //   right: -6px;
           //   padding: 0px;
-          //   z-index: 1;
+          //  
 
           //   #gear_button {
           //     padding: 4px;
@@ -766,10 +766,7 @@ body.home-index {
     }  
   }
 }
-
-.ui-draggable-handle {
-  z-index: 1;
-} 
+ 
 
 /*Profile settings styling*/
 #user_settings{

@@ -1,6 +1,6 @@
 module ApplicantsHelper
  
-   def function(arg) 
+   def status_activity(arg) 
     case arg
       when 1 
         return "Applied" 
