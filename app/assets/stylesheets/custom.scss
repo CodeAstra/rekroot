@@ -228,7 +228,7 @@ body.home-index {
       
       .job_card_div {
         padding: 10px;
-        z-index: 0;
+       
 
         .job_card {
           height: 140px;
@@ -248,7 +248,7 @@ body.home-index {
           //   top: -44px;
           //   right: -6px;
           //   padding: 0px;
-          //   z-index: 1;
+          //  
 
           //   #gear_button {
           //     padding: 4px;
@@ -348,6 +348,7 @@ body.home-index {
 
   #header_links  {
     font-family: Lato;
+    cursor: pointer;
   }
 }
 
@@ -791,12 +792,29 @@ body.home-index {
     }  
   }
 }
-/*Remove job modal styling*/
-/*#remove_job_modal_dialog {
-  width: 285px;
-}*/
+ 
 
+/*Profile settings styling*/
+#user_settings{
+  font-size: 15px;
+  margin-top: 30px;
+  .user_settings_header{
+  padding-bottom: 20px;
+  border-bottom: 1px solid #A8A0A0;
+  margin-bottom: 20px;
+  }
+  ul{
+    list-style-type: none;
+    .settings_tag{
+    font-style: italic;
+    font-weight: bold;
+    margin-right: 25px;
+    }
+    .edit_profile{
+      color: blue;
+      margin-top: 12px;
+      cursor: pointer;
+    }     
+  }    
+}
 
-.ui-draggable-handle {
-  z-index: 1;
-} 

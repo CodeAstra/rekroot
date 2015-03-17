@@ -19,7 +19,6 @@
 #  unconfirmed_email      :string
 #  created_at             :datetime
 #  updated_at             :datetime
-#  role                   :integer          default("2")
 #  company_id             :integer
 #  name                   :string           default("Nonamion")
 #  invitation_token       :string

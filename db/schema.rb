@@ -25,11 +25,6 @@ ActiveRecord::Schema.define(version: 20150301114743) do
   add_index "activities", ["applicant_id"], name: "index_activities_on_applicant_id"
   add_index "activities", ["user_id"], name: "index_activities_on_user_id"
 
-  create_table "answers", force: :cascade do |t|
-    t.text     "answer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "applicantfiles", force: :cascade do |t|
     t.string   "file"
@@ -84,12 +79,6 @@ ActiveRecord::Schema.define(version: 20150301114743) do
   end
 
   add_index "jobs", ["company_id"], name: "index_jobs_on_company_id"
-
-  create_table "questions", force: :cascade do |t|
-    t.string   "question"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
