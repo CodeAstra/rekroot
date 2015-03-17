@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223074611) do
+ActiveRecord::Schema.define(version: 20150301114743) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "applicant_id"
@@ -19,9 +19,11 @@ ActiveRecord::Schema.define(version: 20150223074611) do
     t.integer  "tostatus",     default: 0
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "user_id"
   end
 
   add_index "activities", ["applicant_id"], name: "index_activities_on_applicant_id"
+  add_index "activities", ["user_id"], name: "index_activities_on_user_id"
 
   create_table "answers", force: :cascade do |t|
     t.text     "answer"
@@ -46,7 +48,6 @@ ActiveRecord::Schema.define(version: 20150223074611) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.date     "dob"
-    t.integer  "gender"
     t.string   "phone"
     t.integer  "job_id"
     t.boolean  "confirm",    default: false
@@ -91,12 +92,12 @@ ActiveRecord::Schema.define(version: 20150223074611) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",         null: false
+    t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,          null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -107,9 +108,8 @@ ActiveRecord::Schema.define(version: 20150223074611) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "role",                   default: 2
     t.integer  "company_id"
-    t.string   "name",                   default: "Nonamion"
+    t.string   "name"
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
