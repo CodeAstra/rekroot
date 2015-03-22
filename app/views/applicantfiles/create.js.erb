@@ -1,0 +1,4 @@
+<% if @applicantfile_save %>
+  $('#applicant_details_<%= @applicant.id %> .applicant_files #all_files').append("<%= j render(partial: 'applicantfiles/applicantfile', locals: {applicantfile: @applicantfile}) %>");
+<% end %>
+

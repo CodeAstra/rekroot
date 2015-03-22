@@ -34,6 +34,7 @@ class Applicant < ActiveRecord::Base
   belongs_to :job
   has_many :comments
   has_many :activities
+  has_many :applicantfiles
   validates :job_id, presence: true
   validates :email, presence: true, format: { with: Devise::email_regexp}
 

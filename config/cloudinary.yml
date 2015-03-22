@@ -1,0 +1,9 @@
+production:
+  cloud_name: "rohitdg"
+  api_key: "944996864542547"
+  api_secret: "uC9PsoYptTPmtzkmOrFZ6JMvVzI"
+
+development:
+  cloud_name: "rohitdg"
+  api_key: "944996864542547"
+  api_secret: "uC9PsoYptTPmtzkmOrFZ6JMvVzI"

@@ -24,23 +24,37 @@
           
         </div>
 
+        <div class="applicant_files">
+          <button class = "btn btn-primary" id = "add_file">Add File</button>
+          <%= simple_form_for [@company, @job, applicant, applicantfile], html: {multipart: true}, remote: true do |f| %>
+            <div class="field input-group">
+              <%= f.input :file, as: :file %>
+              <%= f.input :applicant_id, as: :hidden %>
+              <%= token_tag form_authenticity_token %>
+              <%= f.button :submit, "Save file", class: "btn btn-primary", id: "create_job_btn" %>
+            </div>
+          <% end %>
+
+          <div id="all_files">
+            <%= render @applicantfiles %>
+          </div>
+        </div>
+
         <div class="all_activities">
           <%= render @activities %>
         </div>
 
         <div class="modal-comment">
 
+          <!-- <div class="modal_comment_title">
+            <p id="modal_comment_title_text">Comment</p>
+          </div> -->
           <%= render partial: "comments/new", locals: {job: @job, company: @company, applicant: applicant, comment: @new_comment} %>
           
           <div id="all_comments">
             <%= render @comments %>
-          </div>
-
-          
-        </div>      
-
-        
-        
+          </div> 
+        </div>     
       </div>
     </div>
   </div>

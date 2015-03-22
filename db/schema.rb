@@ -25,6 +25,18 @@ ActiveRecord::Schema.define(version: 20150301114743) do
   add_index "activities", ["applicant_id"], name: "index_activities_on_applicant_id"
   add_index "activities", ["user_id"], name: "index_activities_on_user_id"
 
+
+  create_table "applicantfiles", force: :cascade do |t|
+    t.string   "file"
+    t.integer  "applicant_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "applicantfiles", ["applicant_id"], name: "index_applicantfiles_on_applicant_id"
+  add_index "applicantfiles", ["user_id"], name: "index_applicantfiles_on_user_id"
+
   create_table "applicants", force: :cascade do |t|
     t.string   "name"
     t.string   "email"

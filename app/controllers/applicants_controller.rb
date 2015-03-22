@@ -27,7 +27,9 @@ class ApplicantsController < ApplicationController
     @comments = @applicant.comments.reverse_chron.all
     @new_comment = @applicant.comments.new
     @user = current_user
-    @activities = @applicant.activities.reverse_chron.all      
+    @activities = @applicant.activities.reverse_chron.all  
+    @applicantfile = @applicant.applicantfiles.new    
+    @applicantfiles = @applicant.applicantfiles.reverse_chron.all  
   end
 
   def edit 

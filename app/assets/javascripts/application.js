@@ -16,4 +16,5 @@
 //= require turbolinks
 //= require bootstrap 
 //= require local_time
+//= require jquery.remotipart
 //= require_tree 
